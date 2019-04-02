@@ -19,21 +19,12 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// users
-// igi
-// igi
-
-// guests
-// aga
-// aga
-
-
 @Stateless
 @WebService
 @SecurityDomain("my-domain")
 @DeclareRoles({"users", "guests"})
 @WebContext(authMethod="BASIC",transportGuarantee="NONE")
-public class HelloWorld {
+public class StudentController {
 
     @Inject
     StudentContainer container;

@@ -1,7 +1,7 @@
 package main;
 
-import client.HelloWorld;
-import client.HelloWorldService;
+import client.StudentController;
+import client.StudentControllerService;
 
 import javax.imageio.ImageIO;
 import javax.xml.ws.BindingProvider;
@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    private static void setCred(HelloWorld service) {
+    private static void setCred(StudentController service) {
         BindingProvider provider = (BindingProvider) service;
         provider.getRequestContext().put(BindingProvider.USERNAME_PROPERTY, "igi");
         provider.getRequestContext().put(BindingProvider.PASSWORD_PROPERTY, "igi");
@@ -34,8 +34,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        HelloWorldService service = new HelloWorldService();
-        HelloWorld hello = service.getHelloWorldPort();
+        StudentControllerService service = new StudentControllerService();
+        StudentController hello = service.getStudentControllerPort();
         setCred(hello);
 
         byte[] student1Avatar = extractBytes("./soap-connector/src/main/java/main/avatar_student1.bmp");

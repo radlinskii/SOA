@@ -17,11 +17,11 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "HelloWorld", targetNamespace = "http://soap/")
+@WebService(name = "StudentController", targetNamespace = "http://soap/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
-public interface HelloWorld {
+public interface StudentController {
 
 
     /**
