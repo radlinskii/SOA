@@ -54,7 +54,7 @@ public interface StudentController {
         @WebParam(name = "newCourses", targetNamespace = "")
         List<String> newCourses,
         @WebParam(name = "newAvatar", targetNamespace = "")
-        String newAvatar);
+        byte[] newAvatar);
 
     /**
      * 
@@ -83,7 +83,7 @@ public interface StudentController {
         @WebParam(name = "courses", targetNamespace = "")
         List<String> courses,
         @WebParam(name = "avatar", targetNamespace = "")
-        String avatar);
+        byte[] avatar);
 
     /**
      * 

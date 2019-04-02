@@ -1,6 +1,6 @@
 package soap;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import org.apache.commons.codec.binary.Base64;
 import models.student.Student;
 import models.student.StudentContainer;
 import org.jboss.annotation.security.SecurityDomain;
@@ -37,9 +37,8 @@ public class StudentController {
                               @WebParam(name = "faculty") String faculty,
                               @WebParam(name = "semester") @XmlElement(required = true) int semester,
                               @WebParam(name = "courses") List<String> courses,
-                              @WebParam(name = "avatar") String avatar) {
-        String encodedAvatar = avatar == null ? null : Base64.encode(avatar.getBytes());
-        Student student = new Student(name, studentCardId, faculty, semester, courses, encodedAvatar);
+                              @WebParam(name = "avatar") byte[] avatar) {
+        Student student = new Student(name, studentCardId, faculty, semester, courses, Base64.encodeBase64URLSafeString(avatar));
         container.addStudent(student);
 
         return student;
@@ -62,7 +61,7 @@ public class StudentController {
                                @WebParam(name = "newFaculty") String newFaculty,
                                @WebParam(name = "newSemester") Integer newSemester,
                                @WebParam(name = "newCourses") List<String> newCourses,
-                               @WebParam(name = "newAvatar") String newAvatar) {
+                               @WebParam(name = "newAvatar") byte[] newAvatar) {
         Student student = container.get(oldStudentCardId);
 
         if (newStudentCardId != null) {
@@ -87,9 +86,8 @@ public class StudentController {
         }
 
         if (newAvatar != null) {
-            String encodedNewAvatar = Base64.encode(newAvatar.getBytes());
+            String encodedNewAvatar = Base64.encodeBase64URLSafeString(newAvatar);
             student.setAvatar(encodedNewAvatar);
-
         }
         container.addStudent(student);
 
@@ -116,5 +114,4 @@ public class StudentController {
 
         return students;
     }
-
 }

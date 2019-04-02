@@ -1,12 +1,12 @@
 
 package client;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -43,17 +43,6 @@ import javax.xml.bind.annotation.XmlType;
     "studentCardId"
 })
 public class Student {
-    @Override
-    public String toString() {
-        return "Student{" +
-                "avatar='" + avatar + '\'' +
-                ", courses=" + courses +
-                ", faculty='" + faculty + '\'' +
-                ", name='" + name + '\'' +
-                ", semester=" + semester +
-                ", studentCardId=" + studentCardId +
-                '}';
-    }
 
     protected String avatar;
     @XmlElement(nillable = true)
@@ -62,6 +51,18 @@ public class Student {
     protected String name;
     protected int semester;
     protected int studentCardId;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                ", courses=" + courses +
+                ", faculty='" + faculty + '\'' +
+                ", name='" + name + '\'' +
+                ", semester=" + semester +
+                ", studentCardId=" + studentCardId +
+                "avatar='" + "avatar is ignored in toString method because it's horribly wrong" + '\'' +
+                '}';
+    }
 
     /**
      * Gets the value of the avatar property.

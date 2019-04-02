@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="faculty" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="semester" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="courses" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="avatar" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="avatar" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -48,7 +48,7 @@ public class AddStudent {
     protected String faculty;
     protected int semester;
     protected List<String> courses;
-    protected String avatar;
+    protected byte[] avatar;
 
     /**
      * Gets the value of the name property.
@@ -164,10 +164,9 @@ public class AddStudent {
      * 
      * @return
      *     possible object is
-     *     {@link String }
-     *     
+     *     byte[]
      */
-    public String getAvatar() {
+    public byte[] getAvatar() {
         return avatar;
     }
 
@@ -176,10 +175,9 @@ public class AddStudent {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
-     *     
+     *     byte[]
      */
-    public void setAvatar(String value) {
+    public void setAvatar(byte[] value) {
         this.avatar = value;
     }
 

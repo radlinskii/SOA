@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="newFaculty" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="newSemester" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="newCourses" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="newAvatar" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="newAvatar" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -51,7 +51,7 @@ public class EditStudent {
     protected String newFaculty;
     protected Integer newSemester;
     protected List<String> newCourses;
-    protected String newAvatar;
+    protected byte[] newAvatar;
 
     /**
      * Gets the value of the studentCardId property.
@@ -199,10 +199,9 @@ public class EditStudent {
      * 
      * @return
      *     possible object is
-     *     {@link String }
-     *     
+     *     byte[]
      */
-    public String getNewAvatar() {
+    public byte[] getNewAvatar() {
         return newAvatar;
     }
 
@@ -211,10 +210,9 @@ public class EditStudent {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
-     *     
+     *     byte[]
      */
-    public void setNewAvatar(String value) {
+    public void setNewAvatar(byte[] value) {
         this.newAvatar = value;
     }
 
