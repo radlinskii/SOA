@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="soap-connector:ejb exploded">
+    <output-path>$PROJECT_DIR$/soap-connector/target/soap-connector</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>soap-connector</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="soap-connector/ejb/EJB" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/soap-connector/target/soap-connector/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="soap-connector" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,34 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="soap-ear:ear exploded">
+    <output-path>$PROJECT_DIR$/soap-ear/target/soap-ear</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>soap-ear</module>
+        <packaging>ear</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="soap-ear/javaeeApplication/JavaEE" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/soap-ear/target/soap-ear/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/soap-ear/src/main/application" />
+      <element id="archive" name="soap-web.war">
+        <element id="artifact" artifact-name="soap-web:war exploded" />
+      </element>
+      <element id="archive" name="soap-ejb.jar">
+        <element id="artifact" artifact-name="soap-ejb:ejb exploded" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="file-copy" path="$MAVEN_REPOSITORY$/jboss/jboss-annotations-ejb3/4.2.2.GA/jboss-annotations-ejb3-4.2.2.GA.jar" output-file-name="jboss-annotations-ejb3.jar" />
+        <element id="file-copy" path="$MAVEN_REPOSITORY$/org/jboss/ws/jbossws-api/1.1.2.Final/jbossws-api-1.1.2.Final.jar" output-file-name="jbossws-api.jar" />
+        <element id="file-copy" path="$MAVEN_REPOSITORY$/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar" output-file-name="jsr250-api.jar" />
+        <element id="file-copy" path="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11.jar" output-file-name="commons-codec.jar" />
+      </element>
+      <element id="archive" name="soap-connector.jar">
+        <element id="artifact" artifact-name="soap-connector:ejb exploded" />
+      </element>
+    </root>
+  </artifact>
+</component>

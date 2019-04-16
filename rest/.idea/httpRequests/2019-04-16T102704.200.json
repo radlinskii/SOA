@@ -1,0 +1,25 @@
+[
+  {
+    "avatar": "MTIzNTQyMzQzNTIxMzQzMjM",
+    "courses": [
+      "SOA",
+      "JIMP",
+      "JIMP2"
+    ],
+    "faculty": "WIET",
+    "name": "ignacy radlinski",
+    "semester": 8,
+    "studentCardId": 123456
+  },
+  {
+    "avatar": "NzY0NTM0MzUzMjQzNTMyMTQ",
+    "courses": [
+      "SOA",
+      "HD"
+    ],
+    "faculty": "WIET",
+    "name": "agnieszka miszkurka",
+    "semester": 7,
+    "studentCardId": 654321
+  }
+]

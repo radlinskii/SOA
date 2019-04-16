@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/soap.iml" filepath="$PROJECT_DIR$/soap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soap-connector/soap-connector.iml" filepath="$PROJECT_DIR$/soap-connector/soap-connector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soap-ear/soap-ear.iml" filepath="$PROJECT_DIR$/soap-ear/soap-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soap-ejb/soap-ejb.iml" filepath="$PROJECT_DIR$/soap-ejb/soap-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soap-web/soap-web.iml" filepath="$PROJECT_DIR$/soap-web/soap-web.iml" />
+    </modules>
+  </component>
+</project>

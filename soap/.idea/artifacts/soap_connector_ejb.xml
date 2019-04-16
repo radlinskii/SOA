@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="soap-connector:ejb">
+    <output-path>$PROJECT_DIR$/soap-connector/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>soap-connector</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="soap-connector.jar">
+      <element id="artifact" artifact-name="soap-connector:ejb exploded" />
+    </root>
+  </artifact>
+</component>

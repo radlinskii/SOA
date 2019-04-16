@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rest.iml" filepath="$PROJECT_DIR$/rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest-ear/rest-ear.iml" filepath="$PROJECT_DIR$/rest-ear/rest-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest-ejb/rest-ejb.iml" filepath="$PROJECT_DIR$/rest-ejb/rest-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest-web/rest-web.iml" filepath="$PROJECT_DIR$/rest-web/rest-web.iml" />
+    </modules>
+  </component>
+</project>

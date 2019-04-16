@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="soap-ear:ear">
+    <output-path>$PROJECT_DIR$/soap-ear/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>soap-ear</module>
+        <packaging>ear</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="soap-ear.ear">
+      <element id="artifact" artifact-name="soap-ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

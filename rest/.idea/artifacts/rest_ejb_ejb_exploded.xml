@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="rest-ejb:ejb exploded">
+    <output-path>$PROJECT_DIR$/rest-ejb/target/rest-ejb</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>rest-ejb</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="rest-ejb/ejb/EJB" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/rest-ejb/target/rest-ejb/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="rest-ejb" />
+    </root>
+  </artifact>
+</component>

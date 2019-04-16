@@ -1,0 +1,69 @@
+# ADD student 1
+POST http://localhost:8080/rest-web/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+
+# ADD student 2
+POST http://localhost:8080/rest-web/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+###
+
+# ADD with missing name parameter
+POST http://localhost:8080/rest-web/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+
+# list
+GET http://localhost:8080/rest-web/student
+Accept: application/json
+
+###
+
+# list with faculty filter
+GET http://localhost:8080/rest-web/student?faculty=EAIIB
+Accept: application/json
+
+###
+
+# list with course filter
+GET http://localhost:8080/rest-web/student?course=HD
+Accept: application/json
+
+###
+
+
+# getById OK
+GET http://localhost:8080/rest-web/student/123456
+Accept: application/json
+
+###
+
+
+# getById NOT FOUND
+GET http://localhost:8080/rest-web/student/99999
+Accept: application/json
+
+###
+
+# EDIT student 1
+PUT http://localhost:8080/rest-web/student/123456
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
+
+###
