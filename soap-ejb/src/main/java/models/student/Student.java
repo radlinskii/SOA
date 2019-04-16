@@ -1,12 +1,19 @@
 package models.student;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlType(name = "student")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Student {
     private String name;
     private int studentCardId;
     private String faculty;
     private int semester;
+
+
+    @XmlElementWrapper(name = "courses")
+    @XmlElement(name = "course")
     private List<String> courses;
 
     @Override
