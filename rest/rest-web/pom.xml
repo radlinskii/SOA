@@ -41,6 +41,24 @@
 
    <dependencies>
 
+      <dependency>
+         <groupId>io.jsonwebtoken</groupId>
+         <artifactId>jjwt-api</artifactId>
+         <version>0.10.5</version>
+      </dependency>
+      <dependency>
+         <groupId>io.jsonwebtoken</groupId>
+         <artifactId>jjwt-impl</artifactId>
+         <version>0.10.5</version>
+         <scope>runtime</scope>
+      </dependency>
+      <dependency>
+         <groupId>io.jsonwebtoken</groupId>
+         <artifactId>jjwt-jackson</artifactId>
+         <version>0.10.5</version>
+         <scope>runtime</scope>
+      </dependency>
+
       <!-- Dependency on the EJB module so we can use it's services if needed -->
       <dependency>
          <groupId>rest</groupId>
@@ -97,6 +115,11 @@
                </exclusion>
            </exclusions>
        </dependency>
+      <dependency>
+         <groupId>javax.transaction</groupId>
+         <artifactId>javax.transaction-api</artifactId>
+         <version>1.3</version>
+      </dependency>
 
    </dependencies>
 

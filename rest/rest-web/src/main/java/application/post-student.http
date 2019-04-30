@@ -59,10 +59,32 @@ Accept: application/json
 
 ###
 
+# EDIT student 1 UNAUTHORIZED
+PUT http://localhost:8080/rest-web/student/123456
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
+
+###
+
+
+
+# LOGIN
+POST http://localhost:8080/rest-web/auth/login
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+studentCardId=123456
+
+###
+
+
 # EDIT student 1
 PUT http://localhost:8080/rest-web/student/123456
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTYifQ.WNEjkiWSbw2gDl6_GqlnRfBntLt3-MARc5m0lrC1IL1Kwlb2Ht7U58awnptcPqi8kZ-wVyj5cWqXdbVX8Ytr6w
 
 faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
 

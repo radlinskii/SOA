@@ -1,5 +1,7 @@
 package application;
 
+import application.StudentContainer;
+import filter.JWTNeeded;
 import model.Student;
 import org.apache.commons.codec.binary.Base64;
 
@@ -16,7 +18,6 @@ public class StudentResource {
     StudentContainer container;
 
     @GET
-    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response list(@QueryParam("faculty") String facultyFilter, @QueryParam("course") String courseFilter) {
 
@@ -48,7 +49,6 @@ public class StudentResource {
 
 
     @POST
-    @Path("/")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(
@@ -84,6 +84,7 @@ public class StudentResource {
 
     @PUT
     @Path("{oldStudentCardId}")
+    @JWTNeeded
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public Student editStudent(
@@ -96,6 +97,8 @@ public class StudentResource {
             @FormParam("avatar") String newAvatar
     ) {
         Student student = container.get(oldStudentCardId);
+
+        System.out.println(student);
 
         if (newStudentCardId != null) {
             student.setStudentCardId(newStudentCardId);

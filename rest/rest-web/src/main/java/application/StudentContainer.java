@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Singleton
-class StudentContainer {
+public class StudentContainer {
 
     private Map<Integer, Student> students;
 
