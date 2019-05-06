@@ -36,6 +36,7 @@
         <module>rest-ejb</module>
         <module>rest-web</module>
         <module>rest-ear</module>
+        <module>rest-connector</module>
     </modules>
 
     <properties>

@@ -1,8 +1,11 @@
 package model;
 
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+@XmlRootElement(name = "student")
 public class Student {
     private String name;
     private int studentCardId;
@@ -48,6 +51,7 @@ public class Student {
         this.name = name;
     }
 
+    @XmlElement(name = "studentCardId")
     public int getStudentCardId() {
         return studentCardId;
     }
@@ -56,6 +60,7 @@ public class Student {
         this.studentCardId = studentCardId;
     }
 
+    @XmlElement(name = "faculty")
     public String getFaculty() {
         return faculty;
     }
@@ -64,6 +69,7 @@ public class Student {
         this.faculty = faculty;
     }
 
+    @XmlElement(name = "semester")
     public int getSemester() {
         return semester;
     }
@@ -72,14 +78,18 @@ public class Student {
         this.semester = semester;
     }
 
+
     public List<String> getCourses() {
         return courses;
     }
 
+    @XmlElement(name = "course")
     public void setCourses(List<String> courses) {
         this.courses = courses;
     }
 
+
+    @XmlElement(name = "avatar")
     public String getAvatar() {
         return avatar;
     }

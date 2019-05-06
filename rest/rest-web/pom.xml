@@ -74,6 +74,13 @@
          <scope>provided</scope>
       </dependency>
 
+      <!-- before: 3.0.6.Final-->
+      <dependency>
+         <groupId>org.jboss.resteasy</groupId>
+         <artifactId>resteasy-jaxb-provider</artifactId>
+         <version>3.6.1.Final</version>
+      </dependency>
+
       <!-- Import the CDI API, we use provided scope as the API is included in JBoss WildFly -->
       <dependency>
          <groupId>javax.enterprise</groupId>
