@@ -2,6 +2,7 @@
 POST http://localhost:8080/rest-web/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
 name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
@@ -12,8 +13,18 @@ name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&
 POST http://localhost:8080/rest-web/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
 name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+###
+
+# ADD student 3 without authorization header
+POST http://localhost:8080/rest-web/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+name=jan kowalski&studentCardId=085838&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
 ###
 
@@ -21,6 +32,7 @@ name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SO
 POST http://localhost:8080/rest-web/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
 studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
@@ -75,7 +87,7 @@ POST http://localhost:8080/rest-web/auth/login
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
-studentCardId=123456
+login=admin&password=admin
 
 ###
 
@@ -84,8 +96,8 @@ studentCardId=123456
 PUT http://localhost:8080/rest-web/student/123456
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTYifQ.WNEjkiWSbw2gDl6_GqlnRfBntLt3-MARc5m0lrC1IL1Kwlb2Ht7U58awnptcPqi8kZ-wVyj5cWqXdbVX8Ytr6w
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
+faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 
 ###

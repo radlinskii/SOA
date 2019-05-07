@@ -2,7 +2,6 @@ package application;
 
 
 import filter.JWTNeededFilter;
-import resources.AuthResource;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

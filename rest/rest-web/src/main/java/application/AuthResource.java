@@ -1,9 +1,7 @@
-package resources;
+package application;
 
-import application.StudentContainer;
 import filter.KeyGenerator;
 import io.jsonwebtoken.Jwts;
-import model.Student;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -17,11 +15,13 @@ import java.security.Key;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
-import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
+import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
 
 @Path("auth")
 @Transactional
 public class AuthResource {
+    private String HARDCODED_LOGIN = "admin";
+    private String HARDCODED_PASSWORD= "admin";
 
     @Context
     private UriInfo uriInfo;
@@ -38,19 +38,20 @@ public class AuthResource {
     @Path("login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(APPLICATION_FORM_URLENCODED)
-    public Response authenticateUser(@FormParam("studentCardId") Integer studentCardId) {
+    public Response authenticateUser(@FormParam("login") String login, @FormParam("password") String password) {
 
         try {
 
-            System.out.println("#### studentCardId : " + studentCardId);
+            System.out.println("#### login : " + login);
+            System.out.println("#### password : " + password);
 
             // Authenticate the user using the credentials provided
-            authenticate(studentCardId);
+            authenticate(login, password);
 
             System.out.println("authenticated");
 
             // Issue a token for the user
-            String token = issueToken(studentCardId.toString());
+            String token = issueToken(login);
 
             System.out.println("token: " + token);
 
@@ -58,26 +59,25 @@ public class AuthResource {
             return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
 
         } catch (Exception e) {
-            return Response.status(UNAUTHORIZED).build();
+            return Response.status(BAD_REQUEST).build();
         }
     }
 
-    private void authenticate(Integer studentCardId) throws SecurityException {
-        Student student = container.get(studentCardId);
-        System.out.println(student);
+    private void authenticate(String login, String password) throws SecurityException {
 
-        if (student == null)
-            throw new SecurityException("Invalid studentCardId");
+
+        if (!login.equals(HARDCODED_LOGIN) || !password.equals(HARDCODED_PASSWORD))
+            throw new SecurityException("Invalid login or password");
     }
 
-    private String issueToken(String studentCardId) {
+    private String issueToken(String login) {
         System.out.println("### issuing token");
 
         Key key = keyGenerator.generateKey();
 
         try {
         return Jwts.builder()
-                .setSubject(studentCardId)
+                .setSubject(login)
                 .signWith(key)
                 .compact();
 
@@ -85,8 +85,5 @@ public class AuthResource {
             System.out.println("ee:   " + e.getMessage());
             return "ERROR";
         }
-
-
-
     }
 }

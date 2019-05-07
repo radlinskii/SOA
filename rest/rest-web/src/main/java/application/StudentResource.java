@@ -48,6 +48,7 @@ public class StudentResource {
 
 
     @POST
+    @JWTNeeded
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(
@@ -128,4 +129,21 @@ public class StudentResource {
 
         return student;
     }
+
+    @DELETE
+    @JWTNeeded
+    @Path("{studentCardId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delete(@PathParam("studentCardId") int studentCardId) {
+        Student student = container.delete(studentCardId);
+
+        if (student == null) {
+            throw new NotFoundException();
+        }
+
+        return Response.ok(student).build();
+    }
+
+    // TODO proto
+    // TODO swagger
 }
