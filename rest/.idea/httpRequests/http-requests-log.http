@@ -1,3 +1,20 @@
+GET http://localhost:8080/rest-web/student/123456
+Accept: application/json
+
+<> 2019-05-06T100005.200.json
+
+###
+
+POST http://localhost:8080/rest-web/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-06T100000.201.json
+
+###
+
 POST http://localhost:8080/rest-web/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
@@ -418,21 +435,6 @@ Content-Type: application/x-www-form-urlencoded
 name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
 <> 2019-04-30T021420.201.json
-
-###
-
-POST http://localhost:8080/rest-web/auth/login
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-studentCardId=123456
-
-###
-
-GET http://localhost:8080/rest-web/student
-Accept: application/json
-
-<> 2019-04-30T021213.200.json
 
 ###
 

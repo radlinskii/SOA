@@ -1,6 +1,5 @@
 package application;
 
-import application.StudentContainer;
 import filter.JWTNeeded;
 import model.Student;
 import org.apache.commons.codec.binary.Base64;

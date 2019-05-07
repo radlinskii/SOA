@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="model" />
         <module name="rest-ear" />
         <module name="rest-connector" />
         <module name="rest-ejb" />
@@ -13,6 +14,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="model" target="1.7" />
       <module name="rest" target="1.7" />
       <module name="rest-connector" target="1.7" />
       <module name="rest-connector2" target="1.7" />

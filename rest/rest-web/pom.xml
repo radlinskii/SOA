@@ -67,6 +67,12 @@
          <scope>provided</scope>
       </dependency>
 
+      <dependency>
+         <groupId>rest</groupId>
+         <artifactId>model</artifactId>
+         <version>1.0-SNAPSHOT</version>
+      </dependency>
+
       <!-- Import the JAX-RS API, we use provided scope as the API is included in JBoss WildFly -->
       <dependency>
          <groupId>org.jboss.resteasy</groupId>

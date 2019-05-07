@@ -37,6 +37,7 @@
         <module>rest-web</module>
         <module>rest-ear</module>
         <module>rest-connector</module>
+        <module>model</module>
     </modules>
 
     <properties>

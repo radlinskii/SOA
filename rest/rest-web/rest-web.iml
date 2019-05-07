@@ -32,6 +32,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.6" level="project" />
     <orderEntry type="module" module-name="rest-ejb" scope="PROVIDED" />
+    <orderEntry type="module" module-name="model" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.resteasy:jaxrs-api:3.0.10.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxb-provider:3.6.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:1.0.0.Final" level="project" />
