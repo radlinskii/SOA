@@ -44,14 +44,20 @@ public class Main {
         System.out.println("get student with not existing id");
         getStudentById(9999999);
 
+        System.out.println("edit student 1's semester and faculty");
+        edit(authorizationHeader, 123456, null, null, 8, "WIET", null, null);
+        System.out.println("get student 1 by id");
+        getStudentById(123456);
+
+
         System.out.println("delete student 1");
-        deleteById(authorizationHeader, 123456);
+        delete(authorizationHeader, 123456);
         System.out.println("delete student with invalid authorization token");
-        deleteById("invalid token", 654321);
+        delete("invalid token", 654321);
         System.out.println("delete student 2");
-        deleteById(authorizationHeader, 654321);
+        delete(authorizationHeader, 654321);
         System.out.println("delete already not existing student");
-        deleteById(authorizationHeader, 654321);
+        delete(authorizationHeader, 654321);
 
         System.out.println("get list of students - should be empty again");
         getList(null, null);
@@ -134,7 +140,7 @@ public class Main {
         Response response = target.request().get();
         int responseStatus = response.getStatus();
         System.out.println("getStudentById http://localhost:8080/rest-web/student/" + studentCardId.toString() + "  GET " + responseStatus);
-        if(responseStatus == Response.Status.OK.getStatusCode()) {
+        if (responseStatus == Response.Status.OK.getStatusCode()) {
             Student student = response.readEntity(Student.class);
             System.out.println(student);
         }
@@ -143,15 +149,57 @@ public class Main {
         response.close();
     }
 
-    private static void deleteById(String authorizationHeader, Integer studentCardId) {
+    private static void delete(String authorizationHeader, Integer studentCardId) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/" + studentCardId.toString());
         Response response = target.request()
                 .header("Authorization", authorizationHeader)
                 .delete();
         int responseStatus = response.getStatus();
-        System.out.println("deleteById http://localhost:8080/rest-web/student/" + studentCardId.toString() + "  DELETE " + responseStatus);
-        if(responseStatus == Response.Status.OK.getStatusCode()) {
+        System.out.println("delete http://localhost:8080/rest-web/student/" + studentCardId.toString() + "  DELETE " + responseStatus);
+        if (responseStatus == Response.Status.OK.getStatusCode()) {
+            Student student = response.readEntity(Student.class);
+            System.out.println(student);
+        }
+        System.out.println();
+
+        response.close();
+    }
+
+
+    private static void edit(String authorizationHeader, Integer oldStudentCardId, String name, Integer newStudentCardId, Integer semester, String faculty, List<String> courses, String avatar) {
+        Form form = new Form();
+        if (name != null) {
+            form.param("name", name);
+        }
+        if (newStudentCardId != null) {
+            form.param("studentCardId", newStudentCardId.toString());
+        }
+        if (semester != null) {
+            form.param("semester", semester.toString());
+        }
+        if (faculty != null) {
+            form.param("faculty", faculty);
+        }
+        if (avatar != null) {
+            form.param("avatar", avatar);
+        }
+        if (courses != null) {
+            for (String course : courses) {
+                form.param("courses", course);
+            }
+        }
+
+        Entity<Form> entity = Entity.form(form);
+
+        ResteasyClient client = new ResteasyClientBuilder().build();
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/" + oldStudentCardId.toString());
+        Response response = target.request(MediaType.APPLICATION_JSON)
+                .header("Authorization", authorizationHeader)
+                .put(entity);
+        int responseStatus = response.getStatus();
+        System.out.println("edit http://localhost:8080/rest-web/student/" + oldStudentCardId.toString() + "  PUT " + responseStatus);
+        if (responseStatus == Response.Status.OK.getStatusCode()) {
             Student student = response.readEntity(Student.class);
             System.out.println(student);
         }
@@ -161,6 +209,4 @@ public class Main {
     }
 }
 
-
-// TODO PUT
 // TODO AVATAR
