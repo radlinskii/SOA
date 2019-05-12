@@ -1,4 +1,6 @@
+import com.google.protobuf.InvalidProtocolBufferException;
 import model.Student;
+import model.StudentP3;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -49,6 +51,8 @@ public class Main {
         System.out.println("get student 1 by id");
         getStudentById(123456);
 
+        System.out.println("get student 1 by id using protocol buffers"); // PROTO
+        getStudentProto(123456);
 
         System.out.println("delete student 1");
         delete(authorizationHeader, 123456);
@@ -205,6 +209,25 @@ public class Main {
         }
         System.out.println();
 
+        response.close();
+    }
+
+    private static void getStudentProto(Integer index) {
+        ResteasyClient client = new ResteasyClientBuilder().build();
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/proto/" + index);
+        Response response = target.request().get();
+        int responseStatus = response.getStatus();
+        System.out.println("getStudentProto http://localhost:8080/rest-web/student/proto/" + index + "  GET " + responseStatus);
+        if (responseStatus == Response.Status.OK.getStatusCode()) {
+            try {
+                StudentP3.StudentProto3 studentProto3 = StudentP3.StudentProto3.parseFrom(response.readEntity(byte[].class));
+                System.out.println(studentProto3);
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println();
         response.close();
     }
 }

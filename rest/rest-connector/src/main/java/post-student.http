@@ -101,3 +101,11 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_Xg
 faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 
 ###
+
+
+# PROTO
+
+GET http://localhost:8080/rest-web/student/proto/123456
+Accept: */*
+
+###
