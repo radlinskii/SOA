@@ -1,4 +1,4 @@
-package filter;
+package authorization;
 
 import io.jsonwebtoken.Jwts;
 
@@ -24,7 +24,7 @@ public class JWTNeededFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext containerRequestContext) {
-        System.out.println("filter firing up!");
+        System.out.println("authorization firing up!");
 
         // Get the HTTP Authorization header from the request
         String authorizationHeader = containerRequestContext.getHeaderString(HttpHeaders.AUTHORIZATION);

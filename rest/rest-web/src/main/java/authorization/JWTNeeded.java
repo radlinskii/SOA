@@ -1,4 +1,4 @@
-package filter;
+package authorization;
 
 import javax.ws.rs.NameBinding;
 import java.lang.annotation.Retention;

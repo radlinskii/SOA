@@ -1,6 +1,7 @@
-package application;
+package authorization;
 
-import filter.KeyGenerator;
+import application.StudentContainer;
+import authorization.KeyGenerator;
 import io.jsonwebtoken.Jwts;
 
 import javax.inject.Inject;

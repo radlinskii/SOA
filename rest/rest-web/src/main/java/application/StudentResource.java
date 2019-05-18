@@ -1,6 +1,6 @@
 package application;
 
-import filter.JWTNeeded;
+import authorization.JWTNeeded;
 import model.Student;
 import model.StudentP3.StudentProto3;
 import org.apache.tomcat.jni.Status;

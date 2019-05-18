@@ -1,7 +1,8 @@
 package application;
 
 
-import filter.JWTNeededFilter;
+import authorization.AuthResource;
+import authorization.JWTNeededFilter;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
