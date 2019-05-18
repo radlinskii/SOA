@@ -1,6 +1,10 @@
 package application;
 
 import authorization.JWTNeeded;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import model.Student;
 import model.StudentP3.StudentProto3;
 import org.apache.tomcat.jni.Status;
@@ -17,6 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Path("student")
+@Api(value = "StudentResource")
 public class StudentResource {
 
     @Inject
@@ -24,6 +29,8 @@ public class StudentResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "get list of all students")
+    @ApiResponse(code = 200, message =  "OK", response = Student [].class)
     public Response list(@QueryParam("faculty") String facultyFilter, @QueryParam("course") String courseFilter) {
 
         List<Student> students = container.all();
@@ -42,6 +49,11 @@ public class StudentResource {
     @GET
     @Path("{studentCardId}")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "get student with given student card id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message =  "OK", response = Student.class),
+            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+    })
     public Response getById(@PathParam("studentCardId") int studentCardId) {
         Student student = container.get(studentCardId);
 
@@ -57,6 +69,11 @@ public class StudentResource {
     @JWTNeeded
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "create new student")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message =  "OK", response = Student.class),
+            @ApiResponse(code = 400, message =  "BAD REQUEST", response = Response.class),
+    })
     public Response create(
             @FormParam("name") String name,
             @FormParam("studentCardId") Integer studentCardId,
@@ -91,6 +108,12 @@ public class StudentResource {
     @JWTNeeded
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "edit student with given student card id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message =  "OK", response = Student.class),
+            @ApiResponse(code = 400, message =  "BAD REQUEST", response = Response.class),
+            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+    })
     public Student editStudent(
             @PathParam("oldStudentCardId") int oldStudentCardId,
             @FormParam("name") String newName,
@@ -137,6 +160,11 @@ public class StudentResource {
     @JWTNeeded
     @Path("{studentCardId}")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "delete student with given student card id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message =  "OK", response = Student.class),
+            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+    })
     public Response delete(@PathParam("studentCardId") int studentCardId) {
         Student student = container.delete(studentCardId);
 
@@ -149,6 +177,11 @@ public class StudentResource {
 
     @GET
     @Path("/proto/{studentCardId}")
+    @ApiOperation(value = "get student with given student card id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message =  "OK", response = Student.class),
+            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+    })
     public Response getStudentProto(
             @PathParam("studentCardId")
             @NotNull(message="studentCardId cannot be null")
