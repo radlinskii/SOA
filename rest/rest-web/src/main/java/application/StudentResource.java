@@ -3,7 +3,6 @@ package application;
 import filter.JWTNeeded;
 import model.Student;
 import model.StudentP3.StudentProto3;
-import org.apache.commons.codec.binary.Base64;
 import org.apache.tomcat.jni.Status;
 
 import javax.inject.Inject;
@@ -78,9 +77,7 @@ public class StudentResource {
         ) {
             throw new BadRequestException();
         }
-
-
-        Student student = new Student(name, studentCardId, faculty, semester, courses, Base64.encodeBase64URLSafeString(avatar.getBytes()));
+        Student student = new Student(name, studentCardId, faculty, semester, courses, avatar);
         container.addStudent(student);
 
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
@@ -129,8 +126,7 @@ public class StudentResource {
         }
 
         if (newAvatar != null) {
-            String encodedNewAvatar = Base64.encodeBase64URLSafeString(newAvatar.getBytes());
-            student.setAvatar(encodedNewAvatar);
+            student.setAvatar(newAvatar);
         }
         container.addStudent(student);
 
