@@ -1,5 +1,5 @@
 # ADD student 1
-POST http://localhost:8080/rest-web/student
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
@@ -8,9 +8,19 @@ name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&
 
 ###
 
+# ADD student 1
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
 
 # ADD student 2
-POST http://localhost:8080/rest-web/student
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
@@ -20,7 +30,7 @@ name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SO
 ###
 
 # ADD student 3 without authorization header
-POST http://localhost:8080/rest-web/student
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
@@ -29,7 +39,7 @@ name=jan kowalski&studentCardId=085838&faculty=EAIIB&semester=7&courses=SOA&cour
 ###
 
 # ADD with missing name parameter
-POST http://localhost:8080/rest-web/student
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
@@ -40,39 +50,39 @@ studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12
 
 
 # list
-GET http://localhost:8080/rest-web/student
+GET http://localhost:8080/rest-web/api/student
 Accept: application/json
 
 ###
 
 # list with faculty filter
-GET http://localhost:8080/rest-web/student?faculty=EAIIB
+GET http://localhost:8080/rest-web/api/student?faculty=EAIIB
 Accept: application/json
 
 ###
 
 # list with course filter
-GET http://localhost:8080/rest-web/student?course=HD
+GET http://localhost:8080/rest-web/api/student?course=HD
 Accept: application/json
 
 ###
 
 
 # getById OK
-GET http://localhost:8080/rest-web/student/123456
+GET http://localhost:8080/rest-web/api/student/123456
 Accept: application/json
 
 ###
 
 
 # getById NOT FOUND
-GET http://localhost:8080/rest-web/student/99999
+GET http://localhost:8080/rest-web/api/student/99999
 Accept: application/json
 
 ###
 
 # EDIT student 1 UNAUTHORIZED
-PUT http://localhost:8080/rest-web/student/123456
+PUT http://localhost:8080/rest-web/api/student/123456
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
@@ -83,7 +93,7 @@ faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
 
 
 # LOGIN
-POST http://localhost:8080/rest-web/auth/login
+POST http://localhost:8080/rest-web/api/auth/login
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
@@ -93,7 +103,7 @@ login=admin&password=admin
 
 
 # EDIT student 1
-PUT http://localhost:8080/rest-web/student/123456
+PUT http://localhost:8080/rest-web/api/student/123456
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
@@ -105,7 +115,7 @@ faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 
 # PROTO
 
-GET http://localhost:8080/rest-web/student/proto/123456
+GET http://localhost:8080/rest-web/api/student/proto/123456
 Accept: */*
 
 ###

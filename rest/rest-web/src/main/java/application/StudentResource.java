@@ -30,7 +30,7 @@ public class StudentResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "get list of all students")
-    @ApiResponse(code = 200, message =  "OK", response = Student [].class)
+    @ApiResponse(code = 200, message = "OK", response = Student[].class)
     public Response list(@QueryParam("faculty") String facultyFilter, @QueryParam("course") String courseFilter) {
 
         List<Student> students = container.all();
@@ -51,8 +51,8 @@ public class StudentResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "get student with given student card id")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message =  "OK", response = Student.class),
-            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+            @ApiResponse(code = 200, message = "OK", response = Student.class),
+            @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
     })
     public Response getById(@PathParam("studentCardId") int studentCardId) {
         Student student = container.get(studentCardId);
@@ -71,31 +71,29 @@ public class StudentResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "create new student")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message =  "OK", response = Student.class),
-            @ApiResponse(code = 400, message =  "BAD REQUEST", response = Response.class),
+            @ApiResponse(code = 200, message = "OK", response = Student.class),
+            @ApiResponse(code = 400, message = "BAD REQUEST", response = Response.class),
+            @ApiResponse(code = 401, message = "UNAUTHORIZED", response = Response.class),
     })
     public Response create(
-            @FormParam("name") String name,
-            @FormParam("studentCardId") Integer studentCardId,
-            @FormParam("faculty") String faculty,
-            @FormParam("semester") Integer semester,
-            @FormParam("courses") List<String> courses,
-            @FormParam("avatar") String avatar,
+            @FormParam("name")
+                    String name,
+            @FormParam("studentCardId")
+                    Integer studentCardId,
+            @FormParam("faculty")
+            @Pattern(regexp = "EAIIB|WIET", message = "faculty must be either EAIIB or WIET") String faculty,
+            @FormParam("semester")
+                    Integer semester,
+            @FormParam("courses")
+                    List<String> courses,
+            @FormParam("avatar")
+                    String avatar,
             @Context UriInfo uriInfo
     ) {
-
-        if (
-                name == null ||
-                studentCardId == null ||
-                faculty == null ||
-                semester == null ||
-                courses == null ||
-                avatar == null
-        ) {
-            throw new BadRequestException();
-        }
         Student student = new Student(name, studentCardId, faculty, semester, courses, avatar);
         container.addStudent(student);
+
+        System.out.println(student);
 
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
         builder.path(Integer.toString(studentCardId));
@@ -110,9 +108,10 @@ public class StudentResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "edit student with given student card id")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message =  "OK", response = Student.class),
-            @ApiResponse(code = 400, message =  "BAD REQUEST", response = Response.class),
-            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+            @ApiResponse(code = 200, message = "OK", response = Student.class),
+            @ApiResponse(code = 400, message = "BAD REQUEST", response = Response.class),
+            @ApiResponse(code = 401, message = "UNAUTHORIZED", response = Response.class),
+            @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
     })
     public Student editStudent(
             @PathParam("oldStudentCardId") int oldStudentCardId,
@@ -162,8 +161,9 @@ public class StudentResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "delete student with given student card id")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message =  "OK", response = Student.class),
-            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+            @ApiResponse(code = 200, message = "OK", response = Student.class),
+            @ApiResponse(code = 401, message = "UNAUTHORIZED", response = Response.class),
+            @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
     })
     public Response delete(@PathParam("studentCardId") int studentCardId) {
         Student student = container.delete(studentCardId);
@@ -179,12 +179,12 @@ public class StudentResource {
     @Path("/proto/{studentCardId}")
     @ApiOperation(value = "get student with given student card id")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message =  "OK", response = Student.class),
-            @ApiResponse(code = 404, message =  "NOT FOUND", response = Response.class),
+            @ApiResponse(code = 200, message = "OK", response = Student.class),
+            @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
     })
     public Response getStudentProto(
             @PathParam("studentCardId")
-            @NotNull(message="studentCardId cannot be null")
+            @NotNull(message = "studentCardId cannot be null")
             @Pattern(regexp = "^[0-9]{6}$", message = "studentCardId must contain 6 digits")
                     String studentCardId) {
         ProtobufProvider provider = new ProtobufProvider();
@@ -220,6 +220,4 @@ public class StudentResource {
             return Response.status(Status.APR_EPROC_UNKNOWN).build();
         }
     }
-
-    // TODO swagger
 }

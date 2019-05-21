@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5e25dea-604d-4c41-9448-12b477d8d704" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rest-web/src/main/webapp/resources/index.html" afterDir="false" />
+    <list default="true" id="b5e25dea-604d-4c41-9448-12b477d8d704" name="Default Changelist" comment="fix swagger">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/oauth2-redirect.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/swagger-ui-bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/swagger-ui-standalone-preset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/swagger-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/swagger-ui.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,53 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/StudentResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/resources/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/post-student.http">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/RESTApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="-149">
+              <caret line="178" column="33" lean-forward="true" selection-start-line="178" selection-start-column="11" selection-end-line="178" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,24 +100,84 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/WEB-INF/faces-config.xml">
-          <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/src.zip!/java/lang/String.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/WEB-INF/beans.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="248" column="53" selection-start-line="248" selection-start-column="40" selection-end-line="248" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_654321_copy.bmp">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufMediaType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_123456_copy.bmp">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/1.0.0.Final/jboss-jaxrs-api_2.1_spec-1.0.0.Final.jar!/javax/ws/rs/core/Response.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/post-student.http">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1111">
+              <caret line="16" column="56" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/RESTApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/authorization/AuthResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -174,7 +198,13 @@
       <find>eas</find>
       <find>getBy</find>
       <find>getB</find>
+      <find>student</find>
+      <find>student</find>
+      <find>http://localhost:8080/rest-web/</find>
     </findStrings>
+    <replaceStrings>
+      <replace>http://localhost:8080/rest-web/api/</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -211,14 +241,19 @@
         <option value="$PROJECT_DIR$/model/src/main/java/model/Student.proto" />
         <option value="$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufProvider.java" />
         <option value="$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufMediaType.java" />
-        <option value="$PROJECT_DIR$/rest-connector/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/rest-web/pom.xml" />
-        <option value="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" />
-        <option value="$PROJECT_DIR$/rest-web/src/main/java/application/StudentResource.java" />
-        <option value="$PROJECT_DIR$/rest-web/src/main/java/application/RESTApplication.java" />
-        <option value="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/index.html" />
         <option value="$PROJECT_DIR$/rest-web/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/rest-web/src/main/webapp/resources/index.html" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/index.html" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/java/student/student/StudentResource.java" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/java/student/student/StudentResource.java" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/java/application/RESTApplication.java" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/java/student/StudentResource.java" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/java/authorization/AuthResource.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/Student.java" />
+        <option value="$PROJECT_DIR$/rest-web/src/main/java/application/StudentResource.java" />
+        <option value="$PROJECT_DIR$/rest-connector/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" />
       </list>
     </option>
   </component>
@@ -229,19 +264,20 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="210" />
+    <option name="y" value="151" />
+    <option name="width" value="1260" />
+    <option name="height" value="771" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <hideEmptyPackages ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,19 +407,11 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="rest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-              <item name="rest-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-ui" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -403,18 +431,207 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/rest-connector/src/main/java" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/rest-connector/src/main/java" />
       <recent name="$PROJECT_DIR$/model/src/main/java" />
       <recent name="$PROJECT_DIR$/rest-web/src/main/java/application" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="student" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rest-connector/src/main/java" />
+    </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student/proto/123456" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="name=ignacy radlinski&amp;studentCardId=123456&amp;faculty=WIMIR&amp;semester=7&amp;courses=SOA&amp;courses=JIMP&amp;avatar=12354234352134323" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="name=ignacy radlinski&amp;studentCardId=123456&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA&amp;courses=JIMP&amp;avatar=12354234352134323" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGci_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="name=ignacy radlinski&amp;studentCardId=123456&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA&amp;courses=JIMP&amp;avatar=12354234352134323" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="name=agnieszka miszkurka&amp;studentCardId=654321&amp;faculty=WIET&amp;semester=7&amp;courses=SOA&amp;courses=HD&amp;avatar=76453435324353214" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student/proto/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="studentCardId=333333&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA&amp;courses=JIMP&amp;avatar=12354234352134323" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/api/student" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="name=jan kowalski&amp;studentCardId=085838&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA&amp;courses=JIMP&amp;avatar=12354234352134323" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:8080/rest-web/student/proto/123456" />
@@ -822,7 +1039,7 @@
         </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080/rest-web/autdupadupa" />
+          <option name="urlBase" value="http://localhost:8080/rest-web/autstudentstudent" />
           <option name="urlPath" value="" />
           <option name="headers">
             <list>
@@ -1044,7 +1261,7 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="name=dupa&amp;studentCardId=123456&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA,EAIIB&amp;avatar=12354234352134323" />
+          <option name="textToSend" value="name=student&amp;studentCardId=123456&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA,EAIIB&amp;avatar=12354234352134323" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1068,7 +1285,7 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="name=dupa&amp;studentCardId=123456&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA,EAIIB&amp;avatar=12354234352134323" />
+          <option name="textToSend" value="name=student&amp;studentCardId=123456&amp;faculty=EAIIB&amp;semester=7&amp;courses=SOA,EAIIB&amp;avatar=12354234352134323" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1092,7 +1309,7 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="name=dupa&#10;studentCardId=123456&#10;faculty=EAIIB&#10;semester=7&#10;courses=SOA,EAIIB&#10;avatar=12354234352134323" />
+          <option name="textToSend" value="name=student&#10;studentCardId=123456&#10;faculty=EAIIB&#10;semester=7&#10;courses=SOA,EAIIB&#10;avatar=12354234352134323" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1116,7 +1333,7 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="name=dupa" />
+          <option name="textToSend" value="name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1169,7 +1386,7 @@
           </option>
           <option name="parametersEnabled" value="true" />
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="name=dupa" />
+          <option name="textToSend" value="name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1206,7 +1423,7 @@
           </option>
           <option name="parametersEnabled" value="true" />
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;Content-Type: application/x-www-form-urlencoded&#10;&#10;name=dupa" />
+          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;Content-Type: application/x-www-form-urlencoded&#10;&#10;name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1243,7 +1460,7 @@
           </option>
           <option name="parametersEnabled" value="true" />
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;Content-Type: application/x-www-url-encoded&#10;&#10;name=dupa" />
+          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;Content-Type: application/x-www-url-encoded&#10;&#10;name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1280,7 +1497,7 @@
           </option>
           <option name="parametersEnabled" value="true" />
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;Content-Type: application/x-url-encodedform&#10;&#10;name=dupa" />
+          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;Content-Type: application/x-url-encodedform&#10;&#10;name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1317,7 +1534,7 @@
           </option>
           <option name="parametersEnabled" value="true" />
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;&#10;&#10;name=dupa" />
+          <option name="textToSend" value="Accept: */*&#10;Cache-Control: no-cache&#10;&#10;&#10;name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1366,7 +1583,7 @@
           </option>
           <option name="parametersEnabled" value="true" />
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="name=dupa" />
+          <option name="textToSend" value="name=student" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -1413,59 +1630,7 @@
               </KeyValuePair>
               <KeyValuePair>
                 <option name="key" value="name" />
-                <option name="value" value="dupa" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/rest-web/student" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Ignacy radlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA,HD" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="dupa" />
+                <option name="value" value="student" />
               </KeyValuePair>
             </list>
           </option>
@@ -1515,293 +1680,9 @@
                 <option name="key" value="avatar" />
                 <option name="value" value="123456786543234" />
               </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080/rest-web/student" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
               <KeyValuePair>
                 <option name="key" value="name" />
-                <option name="value" value="Ignacyradlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080/rest-web/student" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Ignacy radlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/rest-web/student" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Ignacy radlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/rest-web/student" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Ignacy radlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA,HD" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/rest-web/" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Ignacy radlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA,HD" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/rest-web/student" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Ignacy radlinski" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="studentCardId" />
-                <option name="value" value="311" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="faculty" />
-                <option name="value" value="EAIIB" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="semester" />
-                <option name="value" value="6" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="courses" />
-                <option name="value" value="SOA,HD" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="avatar" />
-                <option name="value" value="123456786543234" />
+                <option name="value" value="student" />
               </KeyValuePair>
             </list>
           </option>
@@ -1825,43 +1706,31 @@
               </KeyValuePair>
             </list>
           </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/rest-web" />
-          <option name="headers">
+          <option name="parameters">
             <list>
               <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
+                <option name="key" value="name" />
+                <option name="value" value="Ignacy radlinski" />
               </KeyValuePair>
               <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/student" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
+                <option name="key" value="studentCardId" />
+                <option name="value" value="311" />
               </KeyValuePair>
               <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
+                <option name="key" value="faculty" />
+                <option name="value" value="EAIIB" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="semester" />
+                <option name="value" value="6" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="courses" />
+                <option name="value" value="SOA,HD" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="avatar" />
+                <option name="value" value="123456786543234" />
               </KeyValuePair>
             </list>
           </option>
@@ -1895,22 +1764,22 @@
     <configuration name="post-student#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http">
       <method v="2" />
     </configuration>
-    <configuration name="post-student#11" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" index="11">
+    <configuration name="post-student#14" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" index="14">
       <method v="2" />
     </configuration>
-    <configuration name="post-student#13" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" index="13">
+    <configuration name="post-student#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" index="2">
       <method v="2" />
     </configuration>
-    <configuration name="post-student#8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" index="8">
+    <configuration name="post-student#6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-connector/src/main/java/post-student.http" index="6">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="HTTP Request.post-student#13" />
+        <item itemvalue="HTTP Request.post-student#14" />
+        <item itemvalue="HTTP Request.post-student#2" />
         <item itemvalue="HTTP Request.post-student#1" />
-        <item itemvalue="HTTP Request.post-student#8" />
-        <item itemvalue="HTTP Request.post-student#11" />
+        <item itemvalue="HTTP Request.post-student#6" />
       </list>
     </recent_temporary>
   </component>
@@ -1938,7 +1807,10 @@
       <workItem from="1557654038360" duration="195000" />
       <workItem from="1557654246178" duration="9444000" />
       <workItem from="1557670375531" duration="1039000" />
-      <workItem from="1558164806714" duration="8947000" />
+      <workItem from="1558164806714" duration="9126000" />
+      <workItem from="1558341858657" duration="14000" />
+      <workItem from="1558341916339" duration="220000" />
+      <workItem from="1558419180868" duration="3432000" />
     </task>
     <task id="LOCAL-00001" summary="setup client">
       <created>1557170450254</created>
@@ -2003,11 +1875,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558174394030</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="setup swagger">
+      <created>1558174555397</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558174555398</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix swagger &amp; validation">
+      <created>1558422611818</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558422611818</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59089000" />
+    <option name="totallyTimeSpent" value="62934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2019,10 +1905,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13858365" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16849817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -2035,13 +1921,13 @@
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" x="21" y="382" width="1638" height="308" id="Run" order="2" sideWeight="0.4981685" weight="0.31229946" />
+      <window_info anchor="bottom" x="21" y="382" width="1638" height="308" id="Run" order="2" sideWeight="0.4981685" visible="true" weight="0.38074866" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="REST Client" order="7" weight="0.52299464" />
-      <window_info anchor="bottom" x="42" y="543" width="1638" height="308" id="Terminal" order="8" sideWeight="0.497558" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" x="42" y="543" width="1638" height="308" id="Terminal" order="8" sideWeight="0.497558" weight="0.3540107" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50183153" side_tool="true" weight="0.31229946" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32941177" />
@@ -2113,7 +1999,8 @@
     <MESSAGE value="fix avatar handling" />
     <MESSAGE value="rename authorization package" />
     <MESSAGE value="setup swagger" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup swagger" />
+    <MESSAGE value="fix swagger &amp; validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix swagger &amp; validation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http">
@@ -2138,16 +2025,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/JWTNeededFilter.java" />
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/authorization/SimpleKeyGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="98" selection-start-line="9" selection-start-column="98" selection-end-line="9" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rest-connector2/pom.xml" />
     <entry file="file://$PROJECT_DIR$/rest-connector2/rest-connector2-web/src/main/webapp/WEB-INF/beans.xml" />
     <entry file="file://$PROJECT_DIR$/rest-connector2/rest-connector2-web/src/main/webapp/WEB-INF/faces-config.xml" />
@@ -2297,88 +2174,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufMediaType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="31" column="199" selection-start-line="31" selection-start-column="199" selection-end-line="31" selection-end-column="199" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student1-1-copy.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/StudentContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student1-2-copy.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student1-copy.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student1-1-copy.bmp" />
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student1-2-copy.bmp" />
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student1-copy.bmp" />
     <entry file="file://$PROJECT_DIR$/rest-connector/rest-connector.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_dupa-copy.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1796#1797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_api-copy.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_student-copy.bmp" />
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_api-copy.bmp" />
     <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_123456.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_654321.bmp">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/authorization/AuthResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rest-web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -2387,54 +2195,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/resources/index.html" />
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/index.html" />
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/WEB-INF/faces-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/WEB-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_654321_copy.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_123456_copy.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/authorization/SimpleKeyGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="42" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
+        <state relative-caret-position="135">
+          <caret line="9" column="98" selection-start-line="9" selection-start-column="98" selection-end-line="9" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/post-student.http">
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/StudentContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_123456_copy.bmp">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/avatar_654321_copy.bmp">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/1.0.0.Final/jboss-jaxrs-api_2.1_spec-1.0.0.Final.jar!/javax/ws/rs/core/Response.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/authorization/AuthResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/swagger-ui/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/WEB-INF/beans.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="427">
+          <caret line="41" column="61" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/RESTApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="178">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2443,15 +2283,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/StudentResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="-149">
+          <caret line="178" column="33" lean-forward="true" selection-start-line="178" selection-start-column="11" selection-end-line="178" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-web/src/main/webapp/resources/index.html">
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/post-student.http">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="-1111">
+          <caret line="16" column="56" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-connector/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="248" column="53" selection-start-line="248" selection-start-column="40" selection-end-line="248" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufMediaType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-web/src/main/java/application/ProtobufProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
         </state>
       </provider>
     </entry>

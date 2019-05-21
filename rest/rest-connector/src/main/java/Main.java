@@ -35,6 +35,10 @@ public class Main {
         System.out.println("get list of students - should be empty");
         getList(null, null);
 
+
+        System.out.println("add student with null parameter");
+        createStudent(authorizationHeader, "Jan Kowalski", 123456, 6, "WIMIR", Arrays.asList("PD", "HD"), student1Avatar);
+
         System.out.println("add student 1");
         createStudent(authorizationHeader, "Jan Kowalski", 123456, 6, "EAIIB", Arrays.asList("PD", "HD"), student1Avatar);
         System.out.println("add student 2");
@@ -89,10 +93,10 @@ public class Main {
         Entity<Form> entity = Entity.form(form);
 
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/auth/login");
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/auth/login");
         Response response = target.request(MediaType.APPLICATION_JSON).post(entity);
         String authorizationHeader = response.getHeaderString("Authorization");
-        System.out.println("login http://localhost:8080/rest-web/auth/login  POST " + response.getStatus());
+        System.out.println("login http://localhost:8080/rest-web/api/auth/login  POST " + response.getStatus());
         response.close();
         System.out.println();
 
@@ -114,13 +118,19 @@ public class Main {
         Entity<Form> entity = Entity.form(form);
 
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student");
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/student");
         Response response = target.request(MediaType.APPLICATION_JSON)
                 .header("Authorization", authorizationHeader)
                 .post(entity);
-        Student student = response.readEntity(Student.class);
-        System.out.println("createStudent http://localhost:8080/rest-web/student  POST " + response.getStatus());
-        System.out.println(student);
+
+        int responseStatus = response.getStatus();
+        System.out.println("createStudent http://localhost:8080/rest-web/api/student  POST " + responseStatus);
+
+        if (responseStatus == Response.Status.CREATED.getStatusCode()) {
+            Student student = response.readEntity(Student.class);
+            System.out.println(student);
+        }
+
         System.out.println();
 
         response.close();
@@ -129,7 +139,7 @@ public class Main {
 
     private static void getList(String facultyFilter, String courseFilter) {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        String uri = "http://localhost:8080/rest-web/student";
+        String uri = "http://localhost:8080/rest-web/api/student";
         if (facultyFilter != null) {
             uri += "?faculty=" + facultyFilter;
         }
@@ -139,7 +149,7 @@ public class Main {
         }
         ResteasyWebTarget target = client.target(uri);
         Response response = target.request().get();
-        System.out.println("getList http://localhost:8080/rest-web/student  GET " + response.getStatus());
+        System.out.println("getList http://localhost:8080/rest-web/api/student  GET " + response.getStatus());
         Student[] students = response.readEntity(Student[].class);
         for (Student s : students) {
             System.out.println(s);
@@ -152,10 +162,10 @@ public class Main {
 
     private static void getStudentById(Integer studentCardId) throws IOException {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/" + studentCardId.toString());
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/student/" + studentCardId.toString());
         Response response = target.request().get();
         int responseStatus = response.getStatus();
-        System.out.println("getStudentById http://localhost:8080/rest-web/student/" + studentCardId.toString() + "  GET " + responseStatus);
+        System.out.println("getStudentById http://localhost:8080/rest-web/api/student/" + studentCardId.toString() + "  GET " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
             Student student = response.readEntity(Student.class);
 
@@ -171,12 +181,12 @@ public class Main {
 
     private static void delete(String authorizationHeader, Integer studentCardId) {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/" + studentCardId.toString());
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/student/" + studentCardId.toString());
         Response response = target.request()
                 .header("Authorization", authorizationHeader)
                 .delete();
         int responseStatus = response.getStatus();
-        System.out.println("delete http://localhost:8080/rest-web/student/" + studentCardId.toString() + "  DELETE " + responseStatus);
+        System.out.println("delete http://localhost:8080/rest-web/api/student/" + studentCardId.toString() + "  DELETE " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
             Student student = response.readEntity(Student.class);
             System.out.println(student);
@@ -213,12 +223,12 @@ public class Main {
         Entity<Form> entity = Entity.form(form);
 
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/" + oldStudentCardId.toString());
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/student/" + oldStudentCardId.toString());
         Response response = target.request(MediaType.APPLICATION_JSON)
                 .header("Authorization", authorizationHeader)
                 .put(entity);
         int responseStatus = response.getStatus();
-        System.out.println("edit http://localhost:8080/rest-web/student/" + oldStudentCardId.toString() + "  PUT " + responseStatus);
+        System.out.println("edit http://localhost:8080/rest-web/api/student/" + oldStudentCardId.toString() + "  PUT " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
             Student student = response.readEntity(Student.class);
             System.out.println(student);
@@ -230,10 +240,10 @@ public class Main {
 
     private static void getStudentProto(Integer index) {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/student/proto/" + index);
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/student/proto/" + index);
         Response response = target.request().get();
         int responseStatus = response.getStatus();
-        System.out.println("getStudentProto http://localhost:8080/rest-web/student/proto/" + index + "  GET " + responseStatus);
+        System.out.println("getStudentProto http://localhost:8080/rest-web/api/student/proto/" + index + "  GET " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
             try {
                 StudentP3.StudentProto3 studentProto3 = StudentP3.StudentProto3.parseFrom(response.readEntity(byte[].class));

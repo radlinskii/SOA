@@ -22,7 +22,7 @@ public class Student {
                 ", faculty='" + faculty + '\'' +
                 ", semester=" + semester +
                 ", courses=" + courses +
-                ", avatar='" + avatar + '\'' +
+                ", avatar='" + avatar.substring(0, 10) + '\'' +
                 '}';
     }
 

@@ -1,3 +1,134 @@
+GET http://localhost:8080/rest-web/api/student/proto/123456
+Accept: */*
+
+<> 2019-05-21T090751.200.txt
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-21T090720.400.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-21T090653.201.json
+
+###
+
+GET http://localhost:8080/rest-web/api/student
+Accept: application/json
+
+<> 2019-05-21T090518.200.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+<> 2019-05-21T090514.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-21T090511.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-21T085609.400.json
+
+###
+
+GET http://localhost:8080/rest-web/api/student/proto/123456
+Accept: */*
+
+<> 2019-05-21T083641.200.txt
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-21T083635.201.json
+
+###
+
+GET http://localhost:8080/rest-web/api/student/proto/123456
+Accept: */*
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+name=jan kowalski&studentCardId=085838&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+<> 2019-05-21T083223.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-21T083221.201.json
+
+###
+
 GET http://localhost:8080/rest-web/student/proto/123456
 Accept: */*
 
@@ -307,132 +438,6 @@ Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMi9.eyJzdWIiOiIxMjM0NTYifQ.WNEjkiWSbw2gDl6_GqlnRfBntLt3-MARc5m0lrC1IL1Kwlb2Ht7U58awnptcPqi8kZ-wVyj5cWqXdbVX8Ytr6w
 
 faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
-
-###
-
-PUT http://localhost:8080/rest-web/student/123456
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
-
-###
-
-PUT http://localhost:8080/rest-web/student/123456
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTYifQ.WNEjkiWSbw2gDl6_GqlnRfBntLt3-MARc5m0lrC1IL1Kwlb2Ht7U58awnptcPqi8kZ-wVyj5cWqXdbVX8Ytr6w
-
-faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
-
-<> 2019-05-07T091357.200.json
-
-###
-
-GET http://localhost:8080/rest-web/student
-Accept: application/json
-
-<> 2019-05-07T091353.200.json
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-07T091348.201.json
-
-###
-
-GET http://localhost:8080/rest-web/student/123456
-Accept: application/json
-
-<> 2019-05-06T100005.200.json
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-06T100000.201.json
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-06T090833.201.json
-
-###
-
-GET http://localhost:8080/rest-web/student
-Accept: application/json
-
-<> 2019-05-06T083441.200.json
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-06T083437.201.json
-
-###
-
-GET http://localhost:8080/rest-web/student
-Accept: application/json
-
-<> 2019-05-06T081017.200.json
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-06T081013.201.json
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-###
-
-POST http://localhost:8080/rest-web/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-06T074223.201.json
-
-###
-
-PUT http://localhost:8080/rest-web/student/123456
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTYifQ.WNEjkiWSbw2gDl6_GqlnRfBntLt3-MARc5m0lrC1IL1Kwlb2Ht7U58awnptcPqi8kZ-wVyj5cWqXdbVX8Ytr6w
-
-faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
-
-<> 2019-04-30T031424.200.json
 
 ###
 
