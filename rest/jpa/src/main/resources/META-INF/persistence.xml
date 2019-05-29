@@ -1,0 +1,36 @@
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="SoaLabUnit" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/PostgresDS2</jta-data-source>
+
+        <properties>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.id.new_generator_mappings" value="true" />
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
+            <property name="hibernate.transaction.manager_lookup_class"
+                      value="org.hibernate.transaction.JBossTransactionManagerLookup" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+        </properties>
+    </persistence-unit>
+</persistence>
+
+<!--standalone.xml-->
+
+<!--<datasource jndi-name="java:jboss/datasources/PostgresDS2" pool-name="PostgresDS2">-->
+<!--<connection-url>jdbc:postgresql://localhost:5432/soa</connection-url>-->
+<!--<driver-class>org.postgresql.Driver</driver-class>-->
+<!--<datasource-class>org.postgresql.ds.PGSimpleDataSource</datasource-class>-->
+<!--<driver>postgresql-jdbc4</driver>-->
+<!--<security>-->
+<!--    <user-name>ignacyradlinski</user-name>-->
+<!--</security>-->
+<!--<validation>-->
+<!--    <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>-->
+<!--    <background-validation>true</background-validation>-->
+<!--    <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>-->
+<!--</validation>-->
+<!--</datasource>-->

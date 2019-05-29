@@ -38,6 +38,8 @@
         <module>rest-ear</module>
         <module>rest-connector</module>
         <module>model</module>
+        <module>jpa</module>
+        <module>dao</module>
     </modules>
 
     <properties>

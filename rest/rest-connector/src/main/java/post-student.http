@@ -8,7 +8,7 @@ name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&
 
 ###
 
-# ADD student 1
+# ADD student 1 with not permitted faculty name
 POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
@@ -117,5 +117,13 @@ faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 
 GET http://localhost:8080/rest-web/api/student/proto/123456
 Accept: */*
+
+###
+
+# DLETE
+
+DELETE http://localhost:8080/rest-web/api/student/23
+Accept: */*
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
 ###

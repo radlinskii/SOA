@@ -8,7 +8,9 @@ import io.swagger.annotations.ApiResponses;
 import model.Student;
 import model.StudentP3.StudentProto3;
 import org.apache.tomcat.jni.Status;
+import studentdao.StudentDAO;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -24,6 +26,9 @@ import java.util.stream.Collectors;
 @Api(value = "StudentResource")
 public class StudentResource {
 
+    @EJB
+    StudentDAO studentDAO;
+
     @Inject
     StudentContainer container;
 
@@ -33,7 +38,7 @@ public class StudentResource {
     @ApiResponse(code = 200, message = "OK", response = Student[].class)
     public Response list(@QueryParam("faculty") String facultyFilter, @QueryParam("course") String courseFilter) {
 
-        List<Student> students = container.all();
+        List<Student> students = studentDAO.list(0, 100);
 
         if (facultyFilter != null) {
             students = students.stream().filter(s -> s.getFaculty().equals(facultyFilter)).collect(Collectors.toList());
@@ -55,7 +60,7 @@ public class StudentResource {
             @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
     })
     public Response getById(@PathParam("studentCardId") int studentCardId) {
-        Student student = container.get(studentCardId);
+        Student student = studentDAO.get(studentCardId);
 
         if (student == null) {
             throw new NotFoundException();
@@ -74,6 +79,7 @@ public class StudentResource {
             @ApiResponse(code = 200, message = "OK", response = Student.class),
             @ApiResponse(code = 400, message = "BAD REQUEST", response = Response.class),
             @ApiResponse(code = 401, message = "UNAUTHORIZED", response = Response.class),
+            @ApiResponse(code = 409, message = "CONFLICT", response = Response.class),
     })
     public Response create(
             @FormParam("name")
@@ -91,9 +97,12 @@ public class StudentResource {
             @Context UriInfo uriInfo
     ) {
         Student student = new Student(name, studentCardId, faculty, semester, courses, avatar);
-        container.addStudent(student);
+        try {
+            studentDAO.create(student);
+        } catch (Exception e) {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
 
-        System.out.println(student);
 
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
         builder.path(Integer.toString(studentCardId));
@@ -122,13 +131,16 @@ public class StudentResource {
             @FormParam("courses") List<String> newCourses,
             @FormParam("avatar") String newAvatar
     ) {
-        Student student = container.get(oldStudentCardId);
+        Student student = studentDAO.get(oldStudentCardId);
 
-        System.out.println(student);
+        if (student == null ) {
+            throw new NotFoundException();
+        }
+
+        studentDAO.delete(oldStudentCardId);
 
         if (newStudentCardId != null) {
             student.setStudentCardId(newStudentCardId);
-            container.delete(oldStudentCardId);
         }
 
         if (newName != null) {
@@ -150,7 +162,8 @@ public class StudentResource {
         if (newAvatar != null) {
             student.setAvatar(newAvatar);
         }
-        container.addStudent(student);
+
+        studentDAO.create(student);
 
         return student;
     }
@@ -166,9 +179,10 @@ public class StudentResource {
             @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
     })
     public Response delete(@PathParam("studentCardId") int studentCardId) {
-        Student student = container.delete(studentCardId);
+        Student student = studentDAO.get(studentCardId);
+        boolean isDeleted = studentDAO.delete(studentCardId);
 
-        if (student == null) {
+        if (!isDeleted) {
             throw new NotFoundException();
         }
 
@@ -221,3 +235,12 @@ public class StudentResource {
         }
     }
 }
+
+// TODO Courses
+// TODO Mappery w dao
+// TODO students < -- > courses - many to many
+// TODO 1x oneToMany
+// TODO 1 x two-way relation
+// TODO min. 4 tables
+// TODO filtering records from db using Criteria API
+

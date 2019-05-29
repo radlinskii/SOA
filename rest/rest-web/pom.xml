@@ -160,6 +160,17 @@
          <artifactId>swagger-jaxrs</artifactId>
          <version>1.5.0</version>
       </dependency>
+      <dependency>
+         <groupId>org.jboss.spec.javax.ejb</groupId>
+         <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+         <version>1.0.2.Final</version>
+      </dependency>
+      <dependency>
+         <groupId>rest</groupId>
+         <artifactId>dao</artifactId>
+         <version>1.0-SNAPSHOT</version>
+         <scope>compile</scope>
+      </dependency>
 
    </dependencies>
 
