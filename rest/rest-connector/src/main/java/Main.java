@@ -1,6 +1,4 @@
-import com.google.protobuf.InvalidProtocolBufferException;
 import model.Student;
-import model.StudentP3;
 import org.apache.commons.codec.binary.Base64;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
@@ -33,11 +31,11 @@ public class Main {
         System.out.println();
 
         System.out.println("get list of students - should be empty");
-        getList(null, null);
+        getList(null);
 
 
-        System.out.println("add student with null parameter");
-        createStudent(authorizationHeader, "Jan Kowalski", 123456, 6, "WIMIR", Arrays.asList("PD", "HD"), student1Avatar);
+        System.out.println("add student with faculty not EAIIB or WIET - see StudentResource.create constraints for details -");
+        createStudent(authorizationHeader, "Jan Kowalski", 123456, 8, "WIMIR", Arrays.asList("PD", "HD"), student1Avatar);
 
         System.out.println("add student 1");
         createStudent(authorizationHeader, "Jan Kowalski", 123456, 6, "EAIIB", Arrays.asList("PD", "HD"), student1Avatar);
@@ -45,13 +43,10 @@ public class Main {
         createStudent(authorizationHeader, "Andrzej Nowak", 654321, 8, "WIET", Arrays.asList("SOA", "JIMP"), student2Avatar);
 
         System.out.println("get list of students");
-        getList(null, null);
+        getList(null);
 
-        System.out.println("get list of students from EAIIB faculty");
-        getList("EAIIB", null);
-
-        System.out.println("get list of students that attend SOA course");
-        getList(null, "SOA");
+        System.out.println("get list of students from 6th semester");
+        getList(6);
 
         System.out.println("get student 1 by id");
         getStudentById(123456);
@@ -62,13 +57,10 @@ public class Main {
         System.out.println("get student with not existing id");
         getStudentById(9999999);
 
-        System.out.println("edit student 1's semester and faculty");
-        edit(authorizationHeader, 123456, null, null, 8, "WIET", null, null);
+        System.out.println("edit student 1's semester and courses");
+        edit(authorizationHeader, 123456, null, null, 8, "WIET", Arrays.asList("SOA", "JIMP2"), null);
         System.out.println("get student 1 by id");
         getStudentById(123456);
-
-        System.out.println("get student 1 by id using protocol buffers"); // PROTO
-        getStudentProto(123456);
 
         System.out.println("delete student 1");
         delete(authorizationHeader, 123456);
@@ -80,7 +72,7 @@ public class Main {
         delete(authorizationHeader, 654321);
 
         System.out.println("get list of students - should be empty again");
-        getList(null, null);
+        getList(null);
 
 
     }
@@ -137,15 +129,11 @@ public class Main {
     }
 
 
-    private static void getList(String facultyFilter, String courseFilter) {
+    private static void getList(Integer semesterFilter) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         String uri = "http://localhost:8080/rest-web/api/student";
-        if (facultyFilter != null) {
-            uri += "?faculty=" + facultyFilter;
-        }
-        if (courseFilter != null) {
-            uri += facultyFilter != null ? "&" : "?";
-            uri += "course=" + courseFilter;
+        if (semesterFilter != null) {
+            uri += "?semester=" + semesterFilter.toString();
         }
         ResteasyWebTarget target = client.target(uri);
         Response response = target.request().get();
@@ -237,26 +225,6 @@ public class Main {
 
         response.close();
     }
-
-    private static void getStudentProto(Integer index) {
-        ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest-web/api/student/proto/" + index);
-        Response response = target.request().get();
-        int responseStatus = response.getStatus();
-        System.out.println("getStudentProto http://localhost:8080/rest-web/api/student/proto/" + index + "  GET " + responseStatus);
-        if (responseStatus == Response.Status.OK.getStatusCode()) {
-            try {
-                StudentP3.StudentProto3 studentProto3 = StudentP3.StudentProto3.parseFrom(response.readEntity(byte[].class));
-                System.out.println(studentProto3);
-            } catch (InvalidProtocolBufferException e) {
-                e.printStackTrace();
-            }
-        }
-
-        System.out.println();
-        response.close();
-    }
-
 
     private static byte[] readImage(String imageName) throws IOException {
         File file = new File(imageName);

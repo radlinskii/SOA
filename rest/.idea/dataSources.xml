@@ -13,5 +13,17 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/soa</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="postgres@localhost" uuid="f3928278-b3cd-4b94-a160-ec2a00628e0e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="ignacyradlinski" uuid="6441b0ae-8af7-4957-8353-2412e195836b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/ignacyradlinski</jdbc-url>
+    </data-source>
   </component>
 </project>

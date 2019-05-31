@@ -1,10 +1,8 @@
 package student;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="student")
@@ -26,14 +24,31 @@ public class StudentRepository {
     @Column(name = "faculty")
     private String faculty;
 
+    @ManyToMany
+    @JoinTable(
+            name = "schedule",
+            joinColumns = {@JoinColumn(name = "studentCardId")},
+            inverseJoinColumns = {@JoinColumn(name = "course_name")}
+    )
+    private List<CourseRepository> schedule;
+
     public StudentRepository() {}
 
-    public StudentRepository(int studentCardId, String name, int semester, String avatar, String faculty) {
+    public StudentRepository(int studentCardId, String name, int semester, String avatar, String faculty, List<CourseRepository> schedule) {
         this.studentCardId = studentCardId;
         this.name = name;
         this.semester = semester;
         this.avatar = avatar;
         this.faculty = faculty;
+        this.schedule = schedule;
+    }
+
+    public List<CourseRepository> getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(List<CourseRepository> schedule) {
+        this.schedule = schedule;
     }
 
     public int getStudentCardId() {

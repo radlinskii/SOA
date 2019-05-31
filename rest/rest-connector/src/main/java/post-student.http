@@ -25,7 +25,7 @@ Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=6&courses=SOA&courses=HD&avatar=76453435324353214
 
 ###
 
@@ -55,18 +55,11 @@ Accept: application/json
 
 ###
 
-# list with faculty filter
-GET http://localhost:8080/rest-web/api/student?faculty=EAIIB
+# list with semester filter
+GET http://localhost:8080/rest-web/api/student?semester=7
 Accept: application/json
 
 ###
-
-# list with course filter
-GET http://localhost:8080/rest-web/api/student?course=HD
-Accept: application/json
-
-###
-
 
 # getById OK
 GET http://localhost:8080/rest-web/api/student/123456
@@ -113,16 +106,9 @@ faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 ###
 
 
-# PROTO
-
-GET http://localhost:8080/rest-web/api/student/proto/123456
-Accept: */*
-
-###
-
 # DLETE
 
-DELETE http://localhost:8080/rest-web/api/student/23
+DELETE http://localhost:8080/rest-web/api/student/123456
 Accept: */*
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 

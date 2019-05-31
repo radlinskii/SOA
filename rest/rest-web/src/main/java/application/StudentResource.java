@@ -5,22 +5,17 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import model.Course;
 import model.Student;
-import model.StudentP3.StudentProto3;
-import org.apache.tomcat.jni.Status;
 import studentdao.StudentDAO;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.annotation.Annotation;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Path("student")
 @Api(value = "StudentResource")
@@ -29,24 +24,13 @@ public class StudentResource {
     @EJB
     StudentDAO studentDAO;
 
-    @Inject
-    StudentContainer container;
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "get list of all students")
     @ApiResponse(code = 200, message = "OK", response = Student[].class)
-    public Response list(@QueryParam("faculty") String facultyFilter, @QueryParam("course") String courseFilter) {
+    public Response list(@QueryParam("semester") Integer semesterFilter) {
 
-        List<Student> students = studentDAO.list(0, 100);
-
-        if (facultyFilter != null) {
-            students = students.stream().filter(s -> s.getFaculty().equals(facultyFilter)).collect(Collectors.toList());
-        }
-
-        if (courseFilter != null) {
-            students = students.stream().filter(s -> s.getCourses().contains(courseFilter)).collect(Collectors.toList());
-        }
+        List<Student> students = semesterFilter == null ? studentDAO.list(0, 100) : studentDAO.getStudentsBySemester(semesterFilter);
 
         return Response.ok(students).build();
     }
@@ -82,20 +66,33 @@ public class StudentResource {
             @ApiResponse(code = 409, message = "CONFLICT", response = Response.class),
     })
     public Response create(
+            @NotNull
             @FormParam("name")
                     String name,
+            @NotNull
             @FormParam("studentCardId")
                     Integer studentCardId,
+            @NotNull
             @FormParam("faculty")
-            @Pattern(regexp = "EAIIB|WIET", message = "faculty must be either EAIIB or WIET") String faculty,
+            @Pattern(regexp = "EAIIB|WIET", message = "faculty must be either EAIIB or WIET")
+                    String faculty,
+            @NotNull
             @FormParam("semester")
                     Integer semester,
+            @NotNull
             @FormParam("courses")
-                    List<String> courses,
+                    List<String> coursesNames,
+            @NotNull
             @FormParam("avatar")
                     String avatar,
             @Context UriInfo uriInfo
     ) {
+
+        ArrayList<Course> courses = new ArrayList<>();
+        for (String courseName : coursesNames) {
+            courses.add(new Course(courseName));
+        }
+
         Student student = new Student(name, studentCardId, faculty, semester, courses, avatar);
         try {
             studentDAO.create(student);
@@ -121,8 +118,9 @@ public class StudentResource {
             @ApiResponse(code = 400, message = "BAD REQUEST", response = Response.class),
             @ApiResponse(code = 401, message = "UNAUTHORIZED", response = Response.class),
             @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
+            @ApiResponse(code = 409, message = "CONFLICT", response = Response.class),
     })
-    public Student editStudent(
+    public Response editStudent(
             @PathParam("oldStudentCardId") int oldStudentCardId,
             @FormParam("name") String newName,
             @FormParam("studentCardId") Integer newStudentCardId,
@@ -132,40 +130,25 @@ public class StudentResource {
             @FormParam("avatar") String newAvatar
     ) {
         Student student = studentDAO.get(oldStudentCardId);
-
-        if (student == null ) {
+        if (student == null) {
             throw new NotFoundException();
         }
 
         studentDAO.delete(oldStudentCardId);
 
-        if (newStudentCardId != null) {
-            student.setStudentCardId(newStudentCardId);
+        ArrayList<Course> courses = new ArrayList<>();
+        for (String courseName : newCourses) {
+            courses.add(new Course(courseName));
         }
 
-        if (newName != null) {
-            student.setName(newName);
+        student.update(new Student(newName, newStudentCardId, newFaculty, newSemester, courses, newAvatar));
+        try {
+            studentDAO.create(student);
+        } catch (Exception e) {
+            return Response.status(Response.Status.CONFLICT).build();
         }
 
-        if (newFaculty != null) {
-            student.setFaculty(newFaculty);
-        }
-
-        if (newSemester != null) {
-            student.setSemester(newSemester);
-        }
-
-        if (newCourses != null) {
-            student.setCourses(newCourses);
-        }
-
-        if (newAvatar != null) {
-            student.setAvatar(newAvatar);
-        }
-
-        studentDAO.create(student);
-
-        return student;
+        return Response.ok(student).build();
     }
 
     @DELETE
@@ -180,67 +163,17 @@ public class StudentResource {
     })
     public Response delete(@PathParam("studentCardId") int studentCardId) {
         Student student = studentDAO.get(studentCardId);
-        boolean isDeleted = studentDAO.delete(studentCardId);
-
-        if (!isDeleted) {
-            throw new NotFoundException();
-        }
-
-        return Response.ok(student).build();
-    }
-
-    @GET
-    @Path("/proto/{studentCardId}")
-    @ApiOperation(value = "get student with given student card id")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Student.class),
-            @ApiResponse(code = 404, message = "NOT FOUND", response = Response.class),
-    })
-    public Response getStudentProto(
-            @PathParam("studentCardId")
-            @NotNull(message = "studentCardId cannot be null")
-            @Pattern(regexp = "^[0-9]{6}$", message = "studentCardId must contain 6 digits")
-                    String studentCardId) {
-        ProtobufProvider provider = new ProtobufProvider();
-        Annotation[] EMPTY_ANNOTATIONS = {};
-
-
-        Student student = container.get(Integer.parseInt(studentCardId));
 
         if (student == null) {
             throw new NotFoundException();
         }
 
+        studentDAO.delete(studentCardId);
 
-        StudentProto3 sp = StudentProto3.newBuilder()
-                .setName(student.getName())
-                .setSemester(student.getSemester())
-                .setFaculty(student.getFaculty())
-                .setStudentCardId(student.getStudentCardId())
-                .setAvatar(student.getAvatar())
-                .addAllCourses(student.getCourses())
-                .build();
-
-        final byte[] buf;
-        try (final ByteArrayOutputStream os = new ByteArrayOutputStream()) {
-            provider.writeTo(sp, sp.getClass(), null, EMPTY_ANNOTATIONS, ProtobufMediaType.MEDIA_TYPE, null, os);
-            buf = os.toByteArray();
-            return Response.status(
-                    Response.Status.OK).entity(buf)
-                    .type("application/x-protobuf")
-                    .build();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return Response.status(Status.APR_EPROC_UNKNOWN).build();
-        }
+        return Response.ok(student).build();
     }
 }
 
-// TODO Courses
-// TODO Mappery w dao
-// TODO students < -- > courses - many to many
 // TODO 1x oneToMany
-// TODO 1 x two-way relation
+// TODO 1 x two-way relation ? OneToOne?
 // TODO min. 4 tables
-// TODO filtering records from db using Criteria API
-

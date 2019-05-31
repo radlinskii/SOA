@@ -4,10 +4,11 @@ import model.Student;
 import student.StudentRepository;
 
 import javax.ejb.Stateless;
-import java.util.ArrayList;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 @Stateless
 public class StudentDAO extends AbstractDao {
@@ -26,34 +27,27 @@ public class StudentDAO extends AbstractDao {
     }
 
     public Student get(Integer index) {
-        return toStudent(super.get(index));
+        return StudentMapper.toStudent(super.get(index));
     }
 
     @SuppressWarnings("unchecked")
     public List<Student> list(int offset, int limit) {
         List<StudentRepository> studentRepositories = super.list(offset, limit);
-        return studentRepositories.stream().map(this::toStudent).collect(Collectors.toList());
+        return StudentMapper.toStudents(studentRepositories);
     }
 
     public void create(Student student) {
-        super.create(toStudentRepository(student));
+        super.create(StudentMapper.toStudentRepository(student));
     }
 
-    private Student toStudent(StudentRepository studentRepository) {
-        if (studentRepository == null) {
-            return null;
-        }
-        return new Student(
-                studentRepository.getName(),
-                studentRepository.getStudentCardId(),
-                studentRepository.getFaculty(),
-                studentRepository.getSemester(),
-                new ArrayList<>(),
-                studentRepository.getAvatar()
-        );
-    }
 
-    private StudentRepository toStudentRepository(Student student) {
-        return new StudentRepository(student.getStudentCardId(), student.getName(), student.getSemester(), student.getAvatar(), student.getFaculty());
+    public List<Student> getStudentsBySemester(Integer semester) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<StudentRepository> query = cb.createQuery(StudentRepository.class);
+        Root<StudentRepository> studentRepositoryRoot = query.from(StudentRepository.class);
+
+        query.where(cb.equal(studentRepositoryRoot.get("semester"), semester));
+
+        return StudentMapper.toStudents(entityManager.createQuery(query).getResultList());
     }
 }

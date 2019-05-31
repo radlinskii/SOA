@@ -1,7 +1,7 @@
 GET http://localhost:8080/rest-web/api/student
 Accept: application/json
 
-<> 2019-05-29T104651.200.json
+<> 2019-05-31T031456.200.json
 
 ###
 
@@ -12,14 +12,37 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_Xg
 
 name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
-<> 2019-05-29T104647.201.json
+<> 2019-05-31T030055.201.json
 
 ###
 
 GET http://localhost:8080/rest-web/api/student
 Accept: application/json
 
-<> 2019-05-29T104642.200.json
+<> 2019-05-31T030051.200.json
+
+###
+
+DELETE http://localhost:8080/rest-web/api/student/123456
+Accept: */*
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+<> 2019-05-31T030042.200.json
+
+###
+
+DELETE http://localhost:8080/rest-web/api/student/12345
+Accept: */*
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
 ###
 
@@ -27,111 +50,85 @@ DELETE http://localhost:8080/rest-web/api/student/23
 Accept: */*
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-<> 2019-05-29T104635.200.json
+<> 2019-05-31T025856.500.html
 
 ###
 
-DELETE http://localhost:8080/rest-web/api/student/123456
-Accept: */*
+PUT http://localhost:8080/rest-web/api/student/123456
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-<> 2019-05-29T104625.200.json
+faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 
-###
-
-DELETE http://localhost:8080/rest-web/api/student/123456
-Accept: */*
-
-###
-
-GET http://localhost:8080/rest-web/api/student/99999
-Accept: application/json
+<> 2019-05-31T025835.200.json
 
 ###
 
 GET http://localhost:8080/rest-web/api/student/123456
 Accept: application/json
 
-<> 2019-05-29T104527.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student?faculty=EAIIB
-Accept: application/json
-
-<> 2019-05-29T104512.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student?course=HD
-Accept: application/json
-
-<> 2019-05-29T104506.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student?faculty=EAIIB
-Accept: application/json
-
-<> 2019-05-29T104503.200.json
+<> 2019-05-31T025748.200.json
 
 ###
 
 GET http://localhost:8080/rest-web/api/student
 Accept: application/json
 
-<> 2019-05-29T104453.200.json
+<> 2019-05-31T025728.200.json
 
 ###
 
-GET http://localhost:8080/rest-web/api/student
+GET http://localhost:8080/rest-web/api/student?semester=7
 Accept: application/json
 
-<> 2019-05-29T104014.200.json
+<> 2019-05-31T025725.200.json
 
 ###
 
-GET http://localhost:8080/rest-web/api/student?faculty=EAIIB
-Accept: application/json
-
-<> 2019-05-29T103851.500.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student
-Accept: application/json
-
-<> 2019-05-29T103841.200.json
-
-###
-
-PUT http://localhost:8080/rest-web/api/student/123456
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
-
-<> 2019-05-29T103756.200.json
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=6&courses=SOA&courses=HD&avatar=76453435324353214
 
 ###
 
-PUT http://localhost:8080/rest-web/api/student/123456
+GET http://localhost:8080/rest-web/api/student
+Accept: application/json
+
+<> 2019-05-31T025631.200.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
+studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
-<> 2019-05-29T103641.500.html
+<> 2019-05-31T025628.400.json
 
 ###
 
-PUT http://localhost:8080/rest-web/api/student/123456
+POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
-faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
+name=jan kowalski&studentCardId=085838&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T025621.400.json
 
 ###
 
@@ -150,7 +147,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_Xg
 
 name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
 
-<> 2019-05-29T103515.201.json
+<> 2019-05-31T025616.201.json
 
 ###
 
@@ -161,7 +158,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_Xg
 
 name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
-<> 2019-05-29T103506.400.json
+<> 2019-05-31T025614.400.json
 
 ###
 
@@ -172,61 +169,295 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_Xg
 
 name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
-###
-
-GET http://localhost:8080/rest-web/api/student/99999
-Accept: application/json
-
-<> 2019-05-29T103331.404.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student/99999
-Accept: application/json
-
-<> 2019-05-29T103234.500.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student/99999
-Accept: application/json
-
-<> 2019-05-29T103019.500.html
+<> 2019-05-31T025611.201.json
 
 ###
 
 GET http://localhost:8080/rest-web/api/student
 Accept: application/json
 
-<> 2019-05-29T102940.200.json
+<> 2019-05-31T025414.200.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T025406.400.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+name=jan kowalski&studentCardId=085838&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T025350.400.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T025346.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+studentCardId=333333&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T025042.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+<> 2019-05-31T024223.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T024211.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=7&courses=SOA&courses=HD&avatar=76453435324353214
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T023729.400.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T021612.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T011104.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T010930.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=1111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T123530.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T122236.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T120908.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T111507.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T110429.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=111111&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+
+<> 2019-05-31T103823.201.json
+
+###
+
+POST http://localhost:8080/rest-web/api/student
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
+
+name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
 ###
 
 GET http://localhost:8080/rest-web/api/student
 Accept: application/json
 
-<> 2019-05-29T102922.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student
-Accept: application/json
-
-<> 2019-05-29T102906.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student/123456
-Accept: application/json
-
-<> 2019-05-29T102901.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student
-Accept: application/json
-
-<> 2019-05-29T102854.200.json
+<> 2019-05-29T104651.200.json
 
 ###
 
@@ -237,194 +468,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_Xg
 
 name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
 
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T102448.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T102402.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T102356.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T102339.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T102204.500.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student/123456
-Accept: application/json
-
-<> 2019-05-29T102151.200.json
-
-###
-
-GET http://localhost:8080/rest-web/api/student/123456
-Accept: application/json
-
-<> 2019-05-29T102108.500.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student/123456
-Accept: application/json
-
-<> 2019-05-29T101115.500.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student/123456
-Accept: application/json
-
-<> 2019-05-29T101013.500.html
-
-###
-
-GET http://localhost:8080/rest-web/api/student
-Accept: application/json
-
-<> 2019-05-29T100957.200.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T093549.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T092954.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T092740.500.html
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T091241.201.json
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T090924.500.html
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T090854.500.html
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T090734.500.html
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T085037.500.html
-
-###
-
-POST http://localhost:8080/rest-web/api/student
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
-
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
-
-<> 2019-05-29T084735.500.html
+<> 2019-05-29T104647.201.json
 
 ###
 
