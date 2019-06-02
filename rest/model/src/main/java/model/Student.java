@@ -9,7 +9,7 @@ import java.util.List;
 public class Student {
     private String name;
     private Integer studentCardId;
-    private String faculty;
+    private Faculty faculty;
     private Integer semester;
 
     private List<Course> courses;
@@ -34,7 +34,7 @@ public class Student {
 
     public Student() {}
 
-    public Student(String name, Integer studentCardId, String faculty, Integer semester, List<Course> courses, String avatar) {
+    public Student(String name, Integer studentCardId, Faculty faculty, Integer semester, List<Course> courses, String avatar) {
         this.name = name;
         this.studentCardId = studentCardId;
         this.faculty = faculty;
@@ -71,11 +71,11 @@ public class Student {
     }
 
     @XmlElement(name = "faculty")
-    public String getFaculty() {
+    public Faculty getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(String faculty) {
+    public void setFaculty(Faculty faculty) {
         this.faculty = faculty;
     }
 

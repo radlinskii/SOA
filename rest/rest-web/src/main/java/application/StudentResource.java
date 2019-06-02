@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import model.Course;
+import model.Faculty;
 import model.Student;
 import studentdao.StudentDAO;
 
@@ -93,7 +94,7 @@ public class StudentResource {
             courses.add(new Course(courseName));
         }
 
-        Student student = new Student(name, studentCardId, faculty, semester, courses, avatar);
+        Student student = new Student(name, studentCardId, new Faculty(faculty), semester, courses, avatar);
         try {
             studentDAO.create(student);
         } catch (Exception e) {
@@ -141,7 +142,7 @@ public class StudentResource {
             courses.add(new Course(courseName));
         }
 
-        student.update(new Student(newName, newStudentCardId, newFaculty, newSemester, courses, newAvatar));
+        student.update(new Student(newName, newStudentCardId, new Faculty(newFaculty), newSemester, courses, newAvatar));
         try {
             studentDAO.create(student);
         } catch (Exception e) {

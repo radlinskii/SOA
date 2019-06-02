@@ -27,25 +27,17 @@ public class CourseDAO extends AbstractDao {
     }
 
     public Course get(Integer index) {
-        return toCourse(super.get(index));
+        return CourseMapper.toCourse(super.get(index));
     }
 
     @SuppressWarnings("unchecked")
     public List<Course> list(int offset, int limit) {
         List<CourseRepository> courseRepositories = super.list(offset, limit);
-        return courseRepositories.stream().map(this::toCourse).collect(Collectors.toList());
+        return courseRepositories.stream().map(CourseMapper::toCourse).collect(Collectors.toList());
     }
 
     public void create(Course course) {
         super.create(toCourseRepository(course));
-    }
-
-    private Course toCourse(CourseRepository courseRepository) {
-        if (courseRepository == null) {
-            return null;
-        }
-        return new Course(courseRepository.getName()
-        );
     }
 
 }

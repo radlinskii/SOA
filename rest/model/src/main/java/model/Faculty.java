@@ -2,20 +2,20 @@ package model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "course")
-public class Course {
+@XmlRootElement(name = "faculty")
+public class Faculty {
     private String name;
 
-    public Course() {
+    public Faculty() {
     }
 
-    public Course(String name) {
+    public Faculty(String name) {
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "Faculty{" +
                 "name='" + name + '\'' +
                 '}';
     }

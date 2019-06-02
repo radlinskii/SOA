@@ -15,7 +15,7 @@ public class StudentMapper {
         return new Student(
                 studentRepository.getName(),
                 studentRepository.getStudentCardId(),
-                studentRepository.getFaculty(),
+                FacultyMapper.toFaculty(studentRepository.getFaculty()),
                 studentRepository.getSemester(),
                 CourseMapper.toCourses(studentRepository.getSchedule()),
                 studentRepository.getAvatar()
@@ -25,7 +25,7 @@ public class StudentMapper {
     public static StudentRepository toStudentRepository(Student student) {
         List<CourseRepository> courseRepositories = CourseMapper.toCourseRepositories(student.getCourses());
 
-        return new StudentRepository(student.getStudentCardId(), student.getName(), student.getSemester(), student.getAvatar(), student.getFaculty(), courseRepositories);
+        return new StudentRepository(student.getStudentCardId(), student.getName(), student.getSemester(), student.getAvatar(), FacultyMapper.toFacultyRepository(student.getFaculty()), courseRepositories);
     }
 
     public static List<Student> toStudents(List<StudentRepository> studentRepositories) {

@@ -21,8 +21,9 @@ public class StudentRepository {
     @Column(name = "avatar")
     private String avatar;
 
-    @Column(name = "faculty")
-    private String faculty;
+    @ManyToOne
+    @JoinColumn(name = "faculty")
+    private FacultyRepository faculty;
 
     @ManyToMany
     @JoinTable(
@@ -34,7 +35,7 @@ public class StudentRepository {
 
     public StudentRepository() {}
 
-    public StudentRepository(int studentCardId, String name, int semester, String avatar, String faculty, List<CourseRepository> schedule) {
+    public StudentRepository(int studentCardId, String name, int semester, String avatar, FacultyRepository faculty, List<CourseRepository> schedule) {
         this.studentCardId = studentCardId;
         this.name = name;
         this.semester = semester;
@@ -83,11 +84,11 @@ public class StudentRepository {
         this.avatar = avatar;
     }
 
-    public String getFaculty() {
+    public FacultyRepository getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(String faculty) {
+    public void setFaculty(FacultyRepository faculty) {
         this.faculty = faculty;
     }
 }
