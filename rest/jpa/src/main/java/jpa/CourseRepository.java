@@ -11,14 +11,34 @@ public class CourseRepository {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "lecturer_id")
+    private Integer lecturerId;
+
     @ManyToMany(mappedBy = "schedule")
     private List<StudentRepository> students;
 
     public CourseRepository() {
     }
 
-    public CourseRepository(String name) {
+    public CourseRepository(String name, Integer lecturerId) {
         this.name = name;
+        this.lecturerId = lecturerId;
+    }
+
+    public Integer getLecturerId() {
+        return lecturerId;
+    }
+
+    public void setLecturerId(Integer lecturerId) {
+        this.lecturerId = lecturerId;
+    }
+
+    public List<StudentRepository> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentRepository> students) {
+        this.students = students;
     }
 
     public String getName() {

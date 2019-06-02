@@ -106,7 +106,7 @@ faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
 ###
 
 
-# DLETE
+# DELETE
 
 DELETE http://localhost:8080/rest-web/api/student/123456
 Accept: */*

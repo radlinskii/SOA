@@ -26,8 +26,8 @@ public class CourseDAO extends AbstractDao {
         return CourseRepository.class;
     }
 
-    public Course get(Integer index) {
-        return CourseMapper.toCourse(super.get(index));
+    public Course getByName(String name) {
+        return CourseMapper.toCourse(super.get(name));
     }
 
     @SuppressWarnings("unchecked")

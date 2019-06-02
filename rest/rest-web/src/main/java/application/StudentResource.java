@@ -1,6 +1,8 @@
 package application;
 
 import authorization.JWTNeeded;
+import dao.CourseDAO;
+import dao.FacultyDAO;
 import dao.StudentDAO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,6 +26,12 @@ public class StudentResource {
 
     @EJB
     StudentDAO studentDAO;
+
+    @EJB
+    CourseDAO courseDAO;
+
+    @EJB
+    FacultyDAO facultyDAO;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -76,7 +84,7 @@ public class StudentResource {
             @NotNull
             @FormParam("faculty")
             @Pattern(regexp = "EAIIB|WIET", message = "faculty must be either EAIIB or WIET")
-                    String faculty,
+                    String facultyName,
             @NotNull
             @FormParam("semester")
                     Integer semester,
@@ -89,12 +97,12 @@ public class StudentResource {
             @Context UriInfo uriInfo
     ) {
 
-        ArrayList<Course> courses = new ArrayList<>();
-        for (String courseName : coursesNames) {
-            courses.add(new Course(courseName));
-        }
+        ArrayList<Course> courses = getCourses(coursesNames);
 
-        Student student = new Student(name, studentCardId, new Faculty(faculty), semester, courses, avatar);
+        Faculty faculty = getFaculty(facultyName);
+
+
+        Student student = new Student(name, studentCardId, faculty, semester, courses, avatar);
         try {
             studentDAO.create(student);
         } catch (Exception e) {
@@ -137,12 +145,12 @@ public class StudentResource {
 
         studentDAO.delete(oldStudentCardId);
 
-        ArrayList<Course> courses = new ArrayList<>();
-        for (String courseName : newCourses) {
-            courses.add(new Course(courseName));
-        }
+        ArrayList<Course> courses = getCourses(newCourses);
 
-        student.update(new Student(newName, newStudentCardId, new Faculty(newFaculty), newSemester, courses, newAvatar));
+        Faculty faculty = getFaculty(newFaculty);
+
+
+        student.update(new Student(newName, newStudentCardId, faculty, newSemester, courses, newAvatar));
         try {
             studentDAO.create(student);
         } catch (Exception e) {
@@ -173,8 +181,29 @@ public class StudentResource {
 
         return Response.ok(student).build();
     }
-}
 
-// TODO 1x oneToMany
-// TODO 1 x two-way relation ? OneToOne?
-// TODO min. 4 tables
+    private ArrayList<Course> getCourses(List<String> newCourses) {
+        ArrayList<Course> courses = new ArrayList<>();
+        for (String courseName : newCourses) {
+
+            try {
+                Course course = courseDAO.getByName(courseName);
+
+                courses.add(course);
+            } catch (Exception e) {
+                throw new BadRequestException();
+            }
+        }
+
+        return courses;
+    }
+
+    private Faculty getFaculty(String newFaculty) {
+        try {
+            return facultyDAO.getByName(newFaculty);
+
+        } catch (Exception e) {
+            throw new BadRequestException();
+        }
+    }
+}

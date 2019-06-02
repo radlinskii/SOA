@@ -24,8 +24,8 @@ public class FacultyDAO extends AbstractDao {
         return FacultyRepository.class;
     }
 
-    public Faculty get(Integer index) {
-        return FacultyMapper.toFaculty(super.get(index));
+    public Faculty getByName(String name) {
+        return FacultyMapper.toFaculty(super.get(name));
     }
 
     @SuppressWarnings("unchecked")
