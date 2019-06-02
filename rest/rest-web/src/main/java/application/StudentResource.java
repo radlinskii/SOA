@@ -1,6 +1,7 @@
 package application;
 
 import authorization.JWTNeeded;
+import dao.StudentDAO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -8,7 +9,6 @@ import io.swagger.annotations.ApiResponses;
 import model.Course;
 import model.Faculty;
 import model.Student;
-import studentdao.StudentDAO;
 
 import javax.ejb.EJB;
 import javax.validation.constraints.NotNull;

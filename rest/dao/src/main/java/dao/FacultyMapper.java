@@ -1,7 +1,7 @@
-package studentdao;
+package dao;
 
+import jpa.FacultyRepository;
 import model.Faculty;
-import student.FacultyRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

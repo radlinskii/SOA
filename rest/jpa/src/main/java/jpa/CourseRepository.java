@@ -1,15 +1,16 @@
-package student;
+package jpa;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "courses")
+@Table(name = "course")
 public class CourseRepository {
 
     @Id
     @Column(name = "name")
     private String name;
+
     @ManyToMany(mappedBy = "schedule")
     private List<StudentRepository> students;
 

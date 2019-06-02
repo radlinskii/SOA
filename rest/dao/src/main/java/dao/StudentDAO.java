@@ -1,7 +1,7 @@
-package studentdao;
+package dao;
 
+import jpa.StudentRepository;
 import model.Student;
-import student.StudentRepository;
 
 import javax.ejb.Stateless;
 import javax.persistence.criteria.CriteriaBuilder;

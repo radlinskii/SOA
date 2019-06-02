@@ -1,7 +1,7 @@
-package studentdao;
+package dao;
 
+import jpa.FacultyRepository;
 import model.Faculty;
-import student.FacultyRepository;
 
 import javax.ejb.Stateless;
 import java.util.List;

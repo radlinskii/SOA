@@ -1,9 +1,9 @@
 drop table if exists student cascade;
-drop table if exists courses cascade;
+drop table if exists course cascade;
 drop table if exists schedule cascade;
 drop table if exists faculty cascade;
 
-create table courses
+create table course
 (
     name varchar(255) not null
         constraint courses_pk
@@ -34,7 +34,7 @@ create table student
 create table schedule
 (
     studentcardid int references student (studentcardid),
-    course_name   varchar(255) references courses (name)
+    course_name   varchar(255) references course (name)
 );
 
 insert into faculty(name)
@@ -42,13 +42,13 @@ values ('EAIIB');
 insert into faculty(name)
 values ('WIET');
 
-insert into courses(name)
+insert into course(name)
 values ('SOA');
-insert into courses(name)
+insert into course(name)
 values ('JIMP');
-insert into courses(name)
+insert into course(name)
 values ('HD');
-insert into courses(name)
+insert into course(name)
 values ('JIMP2');
-insert into courses(name)
+insert into course(name)
 values ('PD');

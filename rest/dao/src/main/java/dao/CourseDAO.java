@@ -1,14 +1,14 @@
-package studentdao;
+package dao;
 
+import jpa.CourseRepository;
 import model.Course;
-import student.CourseRepository;
 
 import javax.ejb.Stateless;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import static studentdao.CourseMapper.toCourseRepository;
+import static dao.CourseMapper.toCourseRepository;
 
 @Stateless
 public class CourseDAO extends AbstractDao {

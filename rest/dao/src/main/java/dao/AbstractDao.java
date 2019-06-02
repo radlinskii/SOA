@@ -1,4 +1,4 @@
-package studentdao;
+package dao;
 
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -35,7 +35,7 @@ public abstract class AbstractDao {
 
     public <T> boolean delete(Object pk) {
         getLogger().info("delete - invoked " + pk);
-        T object = (T) entityManager.find(getType(), pk);
+        T object = entityManager.find(getType(), pk);
         entityManager.remove(object);
 
         return true;
@@ -43,11 +43,11 @@ public abstract class AbstractDao {
 
     public <T> List<T> list(final int offset, final int limit) {
         getLogger().info("list - invoked");
-        final CriteriaQuery<T> criteriaQuery = (CriteriaQuery<T>) entityManager.getCriteriaBuilder().createQuery(getType());
+        final CriteriaQuery<T> criteriaQuery = entityManager.getCriteriaBuilder().createQuery(getType());
         criteriaQuery.from(getType());
         final TypedQuery<T> query = entityManager.createQuery(criteriaQuery);
         query.setFirstResult(offset).setMaxResults(limit);
-        return (List<T>) query.getResultList();
+        return query.getResultList();
     }
 
     public <T> T get(Object pk) {
