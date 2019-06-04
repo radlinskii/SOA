@@ -1,26 +1,26 @@
 package dao;
 
-import jpa.CourseRepository;
-import model.Course;
+import jpa.Course;
+import model.CourseModel;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CourseMapper {
-    public static Course toCourse(CourseRepository courseRepository) {
-        return new Course(courseRepository.getName(), courseRepository.getLecturerId());
+    public static CourseModel toCourseModel(Course course) {
+        return new CourseModel(course.getName(), course.getLecturerId());
     }
 
-    public static List<Course> toCourses(List<CourseRepository> courseRepositories) {
-        return courseRepositories.stream().map(CourseMapper::toCourse).collect(Collectors.toList());
+    public static List<CourseModel> toCourseModels(List<Course> courses) {
+        return courses.stream().map(CourseMapper::toCourseModel).collect(Collectors.toList());
     }
 
-    public static CourseRepository toCourseRepository(Course course) {
-        return new CourseRepository(course.getName(), course.getLecturerId());
+    public static Course toCourse(CourseModel courseModel) {
+        return new Course(courseModel.getName(), courseModel.getLecturerId());
     }
 
-    public static List<CourseRepository> toCourseRepositories(List<Course> courses) {
-        return courses.stream().map(CourseMapper::toCourseRepository).collect(Collectors.toList());
+    public static List<Course> toCourses(List<CourseModel> courseModels) {
+        return courseModels.stream().map(CourseMapper::toCourse).collect(Collectors.toList());
     }
 
 }

@@ -5,7 +5,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import model.Student;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -14,7 +13,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-
 import java.security.Key;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;

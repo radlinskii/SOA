@@ -4,19 +4,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement(name = "lecturer")
-public class Lecturer {
+public class LecturerModel {
     private Integer id;
 
     private String name;
 
     private String title;
 
-    private List<Course> courses;
+    private List<CourseModel> courses;
 
-    public Lecturer() {
+    public LecturerModel() {
     }
 
-    public Lecturer(Integer id, String name, String title, List<Course> courses) {
+    public LecturerModel(Integer id, String name, String title, List<CourseModel> courses) {
         this.id = id;
         this.name = name;
         this.title = title;
@@ -39,11 +39,11 @@ public class Lecturer {
         this.title = title;
     }
 
-    public List<Course> getCourses() {
+    public List<CourseModel> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(List<CourseModel> courses) {
         this.courses = courses;
     }
 

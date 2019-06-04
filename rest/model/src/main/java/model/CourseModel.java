@@ -3,12 +3,12 @@ package model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "course")
-public class Course {
+public class CourseModel {
     private String name;
 
     private Integer lecturerId;
 
-    public Course(String name, Integer lecturerId) {
+    public CourseModel(String name, Integer lecturerId) {
         this.name = name;
         this.lecturerId = lecturerId;
     }
@@ -17,7 +17,7 @@ public class Course {
         return lecturerId;
     }
 
-    public Course() {
+    public CourseModel() {
     }
 
     public void setLecturerId(Integer lecturerId) {

@@ -1,34 +1,34 @@
 package dao;
 
-import jpa.CourseRepository;
-import jpa.StudentRepository;
-import model.Student;
+import jpa.Course;
+import jpa.Student;
+import model.StudentModel;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class StudentMapper {
-    public static Student toStudent(StudentRepository studentRepository) {
-        if (studentRepository == null) {
+    public static StudentModel toStudentModel(Student student) {
+        if (student == null) {
             return null;
         }
-        return new Student(
-                studentRepository.getName(),
-                studentRepository.getStudentCardId(),
-                FacultyMapper.toFaculty(studentRepository.getFaculty()),
-                studentRepository.getSemester(),
-                CourseMapper.toCourses(studentRepository.getSchedule()),
-                studentRepository.getAvatar()
+        return new StudentModel(
+                student.getName(),
+                student.getStudentCardId(),
+                FacultyMapper.toFacultyModel(student.getFaculty()),
+                student.getSemester(),
+                CourseMapper.toCourseModels(student.getSchedule()),
+                student.getAvatar()
         );
     }
 
-    public static StudentRepository toStudentRepository(Student student) {
-        List<CourseRepository> courseRepositories = CourseMapper.toCourseRepositories(student.getCourses());
+    public static Student toStudent(StudentModel studentModel) {
+        List<Course> courses = CourseMapper.toCourses(studentModel.getCourses());
 
-        return new StudentRepository(student.getStudentCardId(), student.getName(), student.getSemester(), student.getAvatar(), FacultyMapper.toFacultyRepository(student.getFaculty()), courseRepositories);
+        return new Student(studentModel.getStudentCardId(), studentModel.getName(), studentModel.getSemester(), studentModel.getAvatar(), FacultyMapper.toFaculty(studentModel.getFaculty()), courses);
     }
 
-    public static List<Student> toStudents(List<StudentRepository> studentRepositories) {
-        return studentRepositories.stream().map(StudentMapper::toStudent).collect(Collectors.toList());
+    public static List<StudentModel> toStudentModels(List<Student> students) {
+        return students.stream().map(StudentMapper::toStudentModel).collect(Collectors.toList());
     }
 }

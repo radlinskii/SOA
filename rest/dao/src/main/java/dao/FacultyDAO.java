@@ -1,7 +1,7 @@
 package dao;
 
-import jpa.FacultyRepository;
-import model.Faculty;
+import jpa.Faculty;
+import model.FacultyModel;
 
 import javax.ejb.Stateless;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Stateless
-public class FacultyDAO extends AbstractDao {
+public class FacultyDAO extends AbstractDAO {
 
     private static final Logger LOGGER = Logger.getLogger("SoaLab" + FacultyDAO.class.toString());
 
@@ -20,22 +20,22 @@ public class FacultyDAO extends AbstractDao {
 
     @SuppressWarnings("unchecked")
     @Override
-    protected Class<FacultyRepository> getType() {
-        return FacultyRepository.class;
+    protected Class<Faculty> getType() {
+        return Faculty.class;
     }
 
-    public Faculty getByName(String name) {
-        return FacultyMapper.toFaculty(super.get(name));
+    public FacultyModel getByName(String name) {
+        return FacultyMapper.toFacultyModel(super.get(name));
     }
 
     @SuppressWarnings("unchecked")
-    public List<Faculty> list(int offset, int limit) {
-        List<FacultyRepository> facultyRepositories = super.list(offset, limit);
-        return facultyRepositories.stream().map(FacultyMapper::toFaculty).collect(Collectors.toList());
+    public List<FacultyModel> list(int offset, int limit) {
+        List<Faculty> faculties = super.list(offset, limit);
+        return faculties.stream().map(FacultyMapper::toFacultyModel).collect(Collectors.toList());
     }
 
-    public void create(Faculty faculty) {
-        super.create(FacultyMapper.toFacultyRepository(faculty));
+    public void create(FacultyModel facultyModel) {
+        super.create(FacultyMapper.toFaculty(facultyModel));
     }
 
 }

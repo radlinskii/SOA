@@ -1,6 +1,6 @@
 package application;
 
-import model.Student;
+import model.StudentModel;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
@@ -12,26 +12,26 @@ import java.util.Map;
 @Singleton
 public class StudentContainer {
 
-    private Map<Integer, Student> students;
+    private Map<Integer, StudentModel> students;
 
     @PostConstruct
     public void init() {
         students = new HashMap<>();
     }
 
-    public void addStudent(Student s) {
+    public void addStudent(StudentModel s) {
         students.put(s.getStudentCardId(), s);
     }
 
-    public List<Student> all() {
+    public List<StudentModel> all() {
         return new ArrayList<>(students.values());
     }
 
-    public Student get(Integer id) {
+    public StudentModel get(Integer id) {
         return students.get(id);
     }
 
-    public Student delete(Integer id) {
+    public StudentModel delete(Integer id) {
         return students.remove(id);
     }
 }

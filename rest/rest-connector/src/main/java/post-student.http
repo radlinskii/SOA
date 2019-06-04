@@ -4,7 +4,7 @@ Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-name=ignacy radlinski&studentCardId=123456&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+name=ignacy radlinski&studentCardId=123456&faculty=WIET&semester=7&courses=JIMP&avatar=12354234352134323
 
 ###
 
@@ -14,7 +14,7 @@ Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+name=ignacy radlinski&studentCardId=123456&faculty=WIMIR&semester=7&courses=JIMP&avatar=12354234352134323
 
 ###
 
@@ -25,16 +25,17 @@ Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-name=agnieszka miszkurka&studentCardId=654321&faculty=WIET&semester=6&courses=SOA&courses=HD&avatar=76453435324353214
+name=agnieszka miszkurka&studentCardId=654321&faculty=EAIIB&semester=7&courses=SOA&avatar=76453435324353214
 
 ###
 
-# ADD student 3 without authorization header
+# ADD student 3
 POST http://localhost:8080/rest-web/api/student
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-name=jan kowalski&studentCardId=085838&faculty=EAIIB&semester=7&courses=SOA&courses=JIMP&avatar=12354234352134323
+name=jan kowalski&studentCardId=085838&faculty=WIET&semester=6&courses=SOA&avatar=12354234352134323
 
 ###
 
@@ -56,7 +57,32 @@ Accept: application/json
 ###
 
 # list with semester filter
-GET http://localhost:8080/rest-web/api/student?semester=7
+GET http://localhost:8080/rest-web/api/student?semester=6
+Accept: application/json
+
+###
+
+# list with faculty filter
+GET http://localhost:8080/rest-web/api/student?faculty=WIET
+Accept: application/json
+
+###
+
+# list with course filter
+GET http://localhost:8080/rest-web/api/student?course=SOA
+Accept: application/json
+
+###
+
+# list with semester and faculty filter
+GET http://localhost:8080/rest-web/api/student?faculty=EAIIB&course=SOA
+Accept: application/json
+
+###
+
+
+# list with semester and faculty and course filter
+GET http://localhost:8080/rest-web/api/student?faculty=WIET&semester=6&course=SOA
 Accept: application/json
 
 ###
@@ -79,7 +105,7 @@ PUT http://localhost:8080/rest-web/api/student/123456
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
-faculty=WIET&semester=8&courses=SOA&courses=JIMP&courses=JIMP2
+faculty=WIET&semester=8&courses=SOA&courses=JIMP
 
 ###
 
@@ -101,7 +127,7 @@ Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiJ9.xMC06ydl5F70p_XgUrkkc2w7857KXN4QAcV4kmu0Usby9pqQq4Ax2RMMpbkLkhSJjW_2epnRg2ppD6g1j3yQKw
 
-faculty=WIET&semester=9&courses=SOA&courses=JIMP&courses=JIMP2
+faculty=EAIIB&semester=6&courses=SOA&courses=JIMP
 
 ###
 

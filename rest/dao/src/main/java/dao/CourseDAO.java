@@ -1,17 +1,17 @@
 package dao;
 
-import jpa.CourseRepository;
-import model.Course;
+import jpa.Course;
+import model.CourseModel;
 
 import javax.ejb.Stateless;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import static dao.CourseMapper.toCourseRepository;
+import static dao.CourseMapper.toCourse;
 
 @Stateless
-public class CourseDAO extends AbstractDao {
+public class CourseDAO extends AbstractDAO {
 
     private static final Logger LOGGER = Logger.getLogger("SoaLab" + CourseDAO.class.toString());
 
@@ -22,22 +22,22 @@ public class CourseDAO extends AbstractDao {
 
     @SuppressWarnings("unchecked")
     @Override
-    protected Class<CourseRepository> getType() {
-        return CourseRepository.class;
+    protected Class<Course> getType() {
+        return Course.class;
     }
 
-    public Course getByName(String name) {
-        return CourseMapper.toCourse(super.get(name));
+    public CourseModel getByName(String name) {
+        return CourseMapper.toCourseModel(super.get(name));
     }
 
     @SuppressWarnings("unchecked")
-    public List<Course> list(int offset, int limit) {
-        List<CourseRepository> courseRepositories = super.list(offset, limit);
-        return courseRepositories.stream().map(CourseMapper::toCourse).collect(Collectors.toList());
+    public List<CourseModel> list(int offset, int limit) {
+        List<Course> courses = super.list(offset, limit);
+        return courses.stream().map(CourseMapper::toCourseModel).collect(Collectors.toList());
     }
 
-    public void create(Course course) {
-        super.create(toCourseRepository(course));
+    public void create(CourseModel courseModel) {
+        super.create(toCourse(courseModel));
     }
 
 }

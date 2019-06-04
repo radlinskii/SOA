@@ -1,4 +1,4 @@
-import model.Student;
+import model.StudentModel;
 import org.apache.commons.codec.binary.Base64;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
@@ -119,8 +119,8 @@ public class Main {
         System.out.println("createStudent http://localhost:8080/rest-web/api/student  POST " + responseStatus);
 
         if (responseStatus == Response.Status.CREATED.getStatusCode()) {
-            Student student = response.readEntity(Student.class);
-            System.out.println(student);
+            StudentModel studentModel = response.readEntity(StudentModel.class);
+            System.out.println(studentModel);
         }
 
         System.out.println();
@@ -138,8 +138,8 @@ public class Main {
         ResteasyWebTarget target = client.target(uri);
         Response response = target.request().get();
         System.out.println("getList http://localhost:8080/rest-web/api/student  GET " + response.getStatus());
-        Student[] students = response.readEntity(Student[].class);
-        for (Student s : students) {
+        StudentModel[] studentModels = response.readEntity(StudentModel[].class);
+        for (StudentModel s : studentModels) {
             System.out.println(s);
         }
         System.out.println();
@@ -155,12 +155,12 @@ public class Main {
         int responseStatus = response.getStatus();
         System.out.println("getStudentById http://localhost:8080/rest-web/api/student/" + studentCardId.toString() + "  GET " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
-            Student student = response.readEntity(Student.class);
+            StudentModel studentModel = response.readEntity(StudentModel.class);
 
             String student1AvatarCopyPath = "./rest-connector/src/main/java/avatar_" + studentCardId + "_copy.bmp";
-            writeImage(student.getAvatar(), student1AvatarCopyPath);
+            writeImage(studentModel.getAvatar(), student1AvatarCopyPath);
 
-            System.out.println(student);
+            System.out.println(studentModel);
         }
         System.out.println();
 
@@ -176,8 +176,8 @@ public class Main {
         int responseStatus = response.getStatus();
         System.out.println("delete http://localhost:8080/rest-web/api/student/" + studentCardId.toString() + "  DELETE " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
-            Student student = response.readEntity(Student.class);
-            System.out.println(student);
+            StudentModel studentModel = response.readEntity(StudentModel.class);
+            System.out.println(studentModel);
         }
         System.out.println();
 
@@ -218,8 +218,8 @@ public class Main {
         int responseStatus = response.getStatus();
         System.out.println("edit http://localhost:8080/rest-web/api/student/" + oldStudentCardId.toString() + "  PUT " + responseStatus);
         if (responseStatus == Response.Status.OK.getStatusCode()) {
-            Student student = response.readEntity(Student.class);
-            System.out.println(student);
+            StudentModel studentModel = response.readEntity(StudentModel.class);
+            System.out.println(studentModel);
         }
         System.out.println();
 

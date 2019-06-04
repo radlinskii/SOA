@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-public abstract class AbstractDao {
+public abstract class AbstractDAO {
 
     @PersistenceContext(unitName = "SoaLabUnit") //wstrzyknięcie po nazwie z persistence.xml
     protected EntityManager entityManager;
@@ -17,7 +17,6 @@ public abstract class AbstractDao {
     public <T> void create(T object) {
         getLogger().info("create - invoked " + object);
         entityManager.persist(object);
-        entityManager.flush();
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)

@@ -1,26 +1,26 @@
 package dao;
 
-import jpa.FacultyRepository;
-import model.Faculty;
+import jpa.Faculty;
+import model.FacultyModel;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class FacultyMapper {
-    public static Faculty toFaculty(FacultyRepository facultyRepository) {
-        return new Faculty(facultyRepository.getName());
+    public static FacultyModel toFacultyModel(Faculty faculty) {
+        return new FacultyModel(faculty.getName());
     }
 
-    public static List<Faculty> toFaculties(List<FacultyRepository> facultyRepositories) {
-        return facultyRepositories.stream().map(FacultyMapper::toFaculty).collect(Collectors.toList());
+    public static List<FacultyModel> toFacultyModels(List<Faculty> faculty) {
+        return faculty.stream().map(FacultyMapper::toFacultyModel).collect(Collectors.toList());
     }
 
-    public static FacultyRepository toFacultyRepository(Faculty faculty) {
-        return new FacultyRepository(faculty.getName());
+    public static Faculty toFaculty(FacultyModel facultyModel) {
+        return new Faculty(facultyModel.getName());
     }
 
-    public static List<FacultyRepository> toFacultyRepositories(List<Faculty> faculties) {
-        return faculties.stream().map(FacultyMapper::toFacultyRepository).collect(Collectors.toList());
+    public static List<Faculty> toFaculties(List<FacultyModel> faculties) {
+        return faculties.stream().map(FacultyMapper::toFaculty).collect(Collectors.toList());
     }
 
 }

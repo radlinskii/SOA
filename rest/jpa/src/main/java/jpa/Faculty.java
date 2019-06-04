@@ -7,16 +7,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "faculty")
-public class FacultyRepository {
+public class Faculty {
 
     @Id
     @Column(name = "name")
     private String name;
 
-    public FacultyRepository() {
+    public Faculty() {
     }
 
-    public FacultyRepository(String name) {
+    public Faculty(String name) {
         this.name = name;
     }
 

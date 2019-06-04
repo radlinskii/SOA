@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="student")
-public class StudentRepository {
+public class Student {
 
     @Id
     @Column(name = "studentCardId")
@@ -23,7 +23,7 @@ public class StudentRepository {
 
     @ManyToOne
     @JoinColumn(name = "faculty")
-    private FacultyRepository faculty;
+    private Faculty faculty;
 
     @ManyToMany
     @JoinTable(
@@ -31,11 +31,12 @@ public class StudentRepository {
             joinColumns = {@JoinColumn(name = "studentCardId")},
             inverseJoinColumns = {@JoinColumn(name = "course_name")}
     )
-    private List<CourseRepository> schedule;
+    private List<Course> schedule;
 
-    public StudentRepository() {}
+    public Student() {
+    }
 
-    public StudentRepository(int studentCardId, String name, int semester, String avatar, FacultyRepository faculty, List<CourseRepository> schedule) {
+    public Student(int studentCardId, String name, int semester, String avatar, Faculty faculty, List<Course> schedule) {
         this.studentCardId = studentCardId;
         this.name = name;
         this.semester = semester;
@@ -44,11 +45,11 @@ public class StudentRepository {
         this.schedule = schedule;
     }
 
-    public List<CourseRepository> getSchedule() {
+    public List<Course> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(List<CourseRepository> schedule) {
+    public void setSchedule(List<Course> schedule) {
         this.schedule = schedule;
     }
 
@@ -84,11 +85,11 @@ public class StudentRepository {
         this.avatar = avatar;
     }
 
-    public FacultyRepository getFaculty() {
+    public Faculty getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(FacultyRepository faculty) {
+    public void setFaculty(Faculty faculty) {
         this.faculty = faculty;
     }
 }

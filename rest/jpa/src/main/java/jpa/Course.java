@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "course")
-public class CourseRepository {
+public class Course {
 
     @Id
     @Column(name = "name")
@@ -15,12 +15,12 @@ public class CourseRepository {
     private Integer lecturerId;
 
     @ManyToMany(mappedBy = "schedule")
-    private List<StudentRepository> students;
+    private List<Student> students;
 
-    public CourseRepository() {
+    public Course() {
     }
 
-    public CourseRepository(String name, Integer lecturerId) {
+    public Course(String name, Integer lecturerId) {
         this.name = name;
         this.lecturerId = lecturerId;
     }
@@ -33,11 +33,11 @@ public class CourseRepository {
         this.lecturerId = lecturerId;
     }
 
-    public List<StudentRepository> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<StudentRepository> students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 

@@ -3,13 +3,13 @@ package model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "faculty")
-public class Faculty {
+public class FacultyModel {
     private String name;
 
-    public Faculty() {
+    public FacultyModel() {
     }
 
-    public Faculty(String name) {
+    public FacultyModel(String name) {
         this.name = name;
     }
 

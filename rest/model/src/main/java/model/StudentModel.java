@@ -6,13 +6,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement(name = "student")
-public class Student {
+public class StudentModel {
     private String name;
     private Integer studentCardId;
-    private Faculty faculty;
+    private FacultyModel faculty;
     private Integer semester;
 
-    private List<Course> courses;
+    private List<CourseModel> courses;
 
     @Override
     public String toString() {
@@ -32,9 +32,10 @@ public class Student {
 
     private String avatar;
 
-    public Student() {}
+    public StudentModel() {
+    }
 
-    public Student(String name, Integer studentCardId, Faculty faculty, Integer semester, List<Course> courses, String avatar) {
+    public StudentModel(String name, Integer studentCardId, FacultyModel faculty, Integer semester, List<CourseModel> courses, String avatar) {
         this.name = name;
         this.studentCardId = studentCardId;
         this.faculty = faculty;
@@ -43,13 +44,13 @@ public class Student {
         this.avatar = avatar;
     }
 
-    public void update(Student newStudent) {
-        if (newStudent.studentCardId != null) this.setStudentCardId(newStudent.studentCardId);
-        if (newStudent.name != null) this.setName(newStudent.name);
-        if (newStudent.faculty != null) this.setFaculty(newStudent.faculty);
-        if (newStudent.semester != null) this.setSemester(newStudent.semester);
-        if (newStudent.avatar != null) this.setAvatar(newStudent.avatar);
-        if (newStudent.courses != null) this.setCourses(newStudent.courses);
+    public void update(StudentModel newStudentModel) {
+        if (newStudentModel.studentCardId != null) this.setStudentCardId(newStudentModel.studentCardId);
+        if (newStudentModel.name != null) this.setName(newStudentModel.name);
+        if (newStudentModel.faculty != null) this.setFaculty(newStudentModel.faculty);
+        if (newStudentModel.semester != null) this.setSemester(newStudentModel.semester);
+        if (newStudentModel.avatar != null) this.setAvatar(newStudentModel.avatar);
+        if (newStudentModel.courses != null) this.setCourses(newStudentModel.courses);
     }
 
 
@@ -71,11 +72,11 @@ public class Student {
     }
 
     @XmlElement(name = "faculty")
-    public Faculty getFaculty() {
+    public FacultyModel getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(Faculty faculty) {
+    public void setFaculty(FacultyModel faculty) {
         this.faculty = faculty;
     }
 
@@ -89,13 +90,13 @@ public class Student {
     }
 
 
-    public List<Course> getCourses() {
+    public List<CourseModel> getCourses() {
         return courses;
     }
 
     @XmlElement(name = "course")
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setCourses(List<CourseModel> courseModels) {
+        this.courses = courseModels;
     }
 
 
